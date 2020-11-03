@@ -4,6 +4,21 @@
 
 @tailwind utilities
 
+
+@mixin link
+  a
+    color: #e3e2df
+    margin: 0px 2px
+    padding: 5px 10px
+    border-radius: 10px
+    transition: 0.5s
+    vertical-align: middle
+    &:hover
+      color: #e3e2df
+      text-decoration: none
+      background-color: #c3073f
+
+
 body
     height: 100vh
     display: flex
@@ -15,13 +30,13 @@ body
     background-position: center
     background-size: cover
     p
+      color: #e3e2df
       text-align: center
       font-size: 3rem
-      color: white
       display: block
       user-select: none
 
-.body
+.header
   text-align: center
   margin: 0 auto
   padding: 40px 80px
@@ -30,16 +45,30 @@ body
 
 .links
   display: block
-  color: white
   margin-top: 20px
   a
-    margin: 0px 2px
-    padding: 5px 10px
-    border-radius: 10px
-    transition: 0.5s
-    vertical-align: middle
+  @include link
 
-    &:hover
-      color: #fff
-      text-decoration: none
-      background-color: red
+.navbar
+  position: fixed
+  top: 0
+  background-color: rgba( 0, 0, 0, .5)
+  width: 100%
+  vertical-align: middle
+  display: flex
+  padding: 10px 50px
+
+.nav-links
+  a
+  @include link
+
+.brand
+  font-weight: bold
+  font-size: 20px
+  transition: 0.5s
+  color: #e3e2df
+  &:hover
+    display: flex
+    color: #fff
+    text-decoration: none
+    vertical-align: middle

@@ -1,0 +1,14 @@
+<div class="containers">
+      <div class="full-screen">
+        <div class="content">
+          <p class="notice">404</p>
+          <p class="notice">Page Not Found</p>
+          <div class="links">
+            <a href="https://my.elkoob.ir">E-panel</a>
+            <a href="https://github.com/elkoob">Github</a>
+            <a href="https://github.com/elkoob/about.elkoob.ir">this page</a>
+          </div>
+        </div>
+      </div>
+</div>
+      

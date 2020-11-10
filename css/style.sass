@@ -72,17 +72,22 @@ body
 .navbar
   position: fixed
   top: 0
-  background-color: rgba( 0, 0, 0, .6)
+  background-color: rgba( 0, 0, 0, .4)
   width: 100%
   vertical-align: middle
   display: flex
-  padding: 10px 50px
+  padding: 20px 60px
+  transition: 0.7s
 
 .nav-links
   a
     @include link
     &:hover
       background-color: #c3073f
+
+.navbar-scroll
+  padding: 10px 50px
+  background-color: rgba( 0, 0, 0, .8)
 
 .brand
   font-weight: bold
@@ -122,62 +127,106 @@ body
       text-decoration: none
 
 
-
-.team-profile
+.person-profile
+  height: 300px
+  padding: 25px 35px
+  text-align: center
+  overflow: hidden
   color: #e3e2df
-  height: max-content
-  width: 150px
   vertical-align: top
   display: inline-block
-  margin: 0px 10px 25px 10px
-  transition: 0.5s
+  margin: 0px 5px 25px 5px
+  transition: all 0.3s ease
   border: solid #c3073f 0px
-  border-radius: 10px
+  border-radius: 6px
   cursor: pointer
+  background-color: rgba( 33, 33, 33, .8)
+  .zoom
+    transition: all 0.3s ease
   &:hover
-    background-color: rgba( 255, 255, 255, .8)
-    padding: 10px 10px
-    border: solid #c3073f 3px
     color: #c3073f !important
-    i
-      border-color: #c3073f
-    p
-      color: #c3073f
+    .zoom
+      transform: scale(1.05)
     img
-      margin: 5px auto
-      border-color: #c3073f
-
-
-  i
-    font-size: 65px
+      border-color: #e3e2df
+      box-shadow: 0 0 0 38em #c3073f
+  .name
+    @include link
+    width: 100%
+    display: block
+  img
     color: #e3e2df
-    width: 70px
-    height: 70px
-    margin-bottom: 5px
+    width: 150px !important
+    height: 150px
+    margin: 5px auto
     border-radius: 50%
-    border: solid #e3e2df 4px
+    border: solid #c3073f 4px
     overflow: hidden
-    color: inherit
-  p
+    transition: all 0.7s ease
+  .job
+    @include link
     height: auto
     width: 100%
     display: block
-    @include link
-    transition: 0.5s
-  img
-    color: #e3e2df
-    width: 70px
-    height: 70px
-    margin: 5px auto
-    border-radius: 50%
-    border: solid #e3e2df 4px
-    overflow: hidden
-
 
 .our-team
-  max-width: 700px
-  p
-    margin-bottom: 10px
+  max-width: 100%
+  margin: 50px 50px
+  height: 100%
+
+  .notice-exp
+    width: 100%
+    position: relative
+    color: #e3e2df
+    text-align: center
+    font-size: 3rem
+    display: inline-block
+    user-select: none
+    margin-bottom: 60px
+
+  .notice-exp::before
+    content: ""
+    position: absolute
+    bottom: -25px
+    left: 50%
+    transform: translateX(-50%)
+    width: 180px
+    height: 5px
+    background-color: #c3073f
+    border-radius: 20px
+
+  .notice-exp::after
+    content: "Who we are"
+    position: absolute
+    bottom: -40px
+    left: 50%
+    padding: 5px 10px
+    background-color: #212121
+    transform: translateX(-50%)
+    font-size: 17px
+    color: #e3e2df
+    border-radius: 20px
+
+.owl-dots
+    text-align: center
+    margin-top: 20px
+
+.owl-dot
+    height: 13px
+    width: 13px
+    margin: 0 5px
+    outline: none!important
+    border-radius: 50%
+    border: 2px solid crimson!important
+    transition: all 0.3s ease
+
+.owl-dot.active
+    width: 35px
+    border-radius: 14px
+
+.owl-dot.active,
+.owl-dot:hover
+    background: crimson!important
 
 
 .scroll

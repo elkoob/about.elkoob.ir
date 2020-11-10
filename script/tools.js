@@ -17,7 +17,7 @@ function _split(str,key,count) {
 }
 function route(url,page) {
   if(get_route(1) == url){
-    load("pages/"+page+".el","#main");
+    load("pages/"+page+".html","#main");
     //$("#route").attr("src","");
     page_found=1;
   }

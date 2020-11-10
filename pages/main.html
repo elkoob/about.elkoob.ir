@@ -1,5 +1,5 @@
 
-<div class="containers">
+<!-- <div class="containers">
   <div class="full-screen">
     <div class="content">
       <p class="notice">Working on GitHub!</p>
@@ -47,7 +47,7 @@
       </div>
     </div>
   </section>
-</div>
+</div> -->
 
 
       <!-- <div class="full-screen first-of-page">

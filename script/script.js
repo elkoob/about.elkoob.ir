@@ -1,10 +1,10 @@
 $(window).scroll(function(){
     // sticky navbar on scroll script
     if(this.scrollY > 20){
-        $('.navbar').addClass("navbar-scroll");
+        $('.wrapper').addClass("navbar-scroll");
     }
     else{
-        $('.navbar').removeClass("navbar-scroll");
+        $('.wrapper').removeClass("navbar-scroll");
     }
 });
 

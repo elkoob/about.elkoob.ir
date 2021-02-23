@@ -11,19 +11,28 @@
     <title>Elkoob Electronic & Web Team</title>
 </head>
 <body>
-  <nav class="navbar">
-    <a class="brand" href="#">Elkoob Team</a>
-    <div class="nav-links">
-      <a href="#">Team worked</a>
-      <a href="#">Members</a>
-      <a href="#">contacts</a>
-    </div>
-  </nav>
-  <div class="body" id="main">
-
-    <div class="containers">
-      <div class="full-screen">
-        <div class="content">
+  <!-- navbar  -->
+  <div class="wrapper">
+    <nav class="navbar">
+      <input type="checkbox" name="" value="" id="show-search">
+      <div class="content">
+        <a class="brand" href="#">Elkoob Team</a>
+        <div class="nav-links">
+          <a href="#">Team worked</a>
+          <a href="#">Members</a>
+          <a href="#">contacts</a>
+        </div>
+      </div>
+      <label for="show-search" class="search-icon"><i class="fa fa-search"></i></label>
+      <form class="search-box" action="index.html" method="post">
+        <input type="text" name="" value="" placeholder="Type to search..." required>
+        <button class="go-icon" type="submit" name="button"><i class="fa fa-long-arrow-alt-right"></i></button>
+      </form>
+    </nav>
+  </div>
+    <!-- welcome section  -->
+    <section class="welcome">
+        <div class="welcome-content">
           <p class="notice">Working on GitHub!</p>
           <div class="links">
             <a href="https://my.elkoob.ir">E-panel</a>
@@ -31,55 +40,53 @@
             <a href="https://www.aparat.com/elkoob">Aparat</a>
             <a href="https://github.com/elkoob">Github</a>
             <a href="https://github.com/elkoob/about.elkoob.ir">this page</a>
-          </div>
+        </div>
+    </section>
+
+    <!-- ourteam section -->
+    <section class="our-team">
+      <div class="content">
+        <p class="notice-exp">Our Team</p>
+        <div class="team carousel owl-carousel">
+          <a class="person-profile" href="#">
+            <div class="zoom">
+              <img src="assets/imgs/amir.jpg" alt="...">
+              <p class="name">Amir abass Kheiry</p>
+              <p class="job">Team header, Electronic man, Backend developer</p>
+            </div>
+          </a>
+          <a class="person-profile" href="#">
+            <div class="zoom">
+              <img src="assets/imgs/Ledrif.jpg" alt="...">
+              <p class="name">Mahdi Deldadeh</p>
+              <p class="job">Frontend developer, Electronic man , Youtuber of Team</p>
+            </div>
+          </a>
+          <a class="person-profile" href="#">
+            <div class="zoom">
+              <img src="assets/imgs/alireza.jpg" alt="...">
+              <p class="name">Alireza Mohseni</p>
+              <p class="job"> Poster designer, Logo designer, 3D designer</p>
+            </div>
+          </a>
+          <a class="person-profile" href="#">
+            <div class="zoom">
+              <img src="assets/imgs/team-made.jpg" alt="...">
+              <p class="name">Mohammad Hossein Rafi</p>
+              <p class="job">Electronic man, Backend developer, Windows developer</p>
+            </div>
+          </a>
+          <a class="person-profile" href="#">
+            <div class="zoom">
+              <img src="assets/imgs/team-made.jpg" alt="...">
+              <p class="name">Mohammad Mahdi Najafi</p>
+              <p class="job"> Computer Hardware, Electronic man</p>
+            </div>
+          </a>
         </div>
       </div>
+    </section>
 
-      <!-- outteam section -->
-      <section class="full-screen first-of-page">
-        <div class="our-team content">
-          <p class="notice-exp">Our Team</p>
-          <div class="team carousel owl-carousel">
-            <a class="person-profile" href="#">
-              <div class="zoom">
-                <img src="assets/imgs/amir.jpg" alt="...">
-                <p class="name">Amir abass Kheiry</p>
-                <p class="job">Team header, Electronic man, Backend developer</p>
-              </div>
-            </a>
-            <a class="person-profile" href="#">
-              <div class="zoom">
-                <img src="assets/imgs/Ledrif.jpg" alt="...">
-                <p class="name">Mahdi Deldadeh</p>
-                <p class="job">Frontend developer, Electronic man , Youtuber of Team</p>
-              </div>
-            </a>
-            <a class="person-profile" href="#">
-              <div class="zoom">
-                <img src="assets/imgs/alireza.jpg" alt="...">
-                <p class="name">Alireza Mohseni</p>
-                <p class="job"> Poster designer, Logo designer, 3D designer</p>
-              </div>
-            </a>
-            <a class="person-profile" href="#">
-              <div class="zoom">
-                <img src="assets/imgs/team-made.jpg" alt="...">
-                <p class="name">Mohammad Hossein Rafi</p>
-                <p class="job">Electronic man, Backend developer, Windows developer</p>
-              </div>
-            </a>
-            <a class="person-profile" href="#">
-              <div class="zoom">
-                <img src="assets/imgs/team-made.jpg" alt="...">
-                <p class="name">Mohammad Mahdi Najafi</p>
-                <p class="job"> Computer Hardware, Electronic man</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
   <footer class="footer">
     <p>powered by <span>Elkoob Team</span></p>
   </footer>

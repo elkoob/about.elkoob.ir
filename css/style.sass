@@ -4,11 +4,20 @@
 
 @tailwind utilities
 
-$black-background: #222
+
+// colors var
+$black-background: #272727
 $dark-background: #1f2833
 $text-color: #c5c6c7
 $special-text: #66fcf1
 $btn-color: #45a29e
+$navbar-bg: #222
+
+// beackpoints var
+$big: 1250px
+$medium: 900px
+
+
 
 @mixin link
     color: $text-color
@@ -20,7 +29,6 @@ $btn-color: #45a29e
     text-decoration: none
     box-sizing: border-box
     display: inline-block
-
 
 @mixin links
   width: 100%
@@ -38,10 +46,9 @@ body
 .wrapper
   position: fixed
   width: 100%
-  transition: 0.7s
+  transition: all 0.7s
   input[type="checkbox"]
     display: none
-
 
 .navbar
   position: relative
@@ -51,23 +58,39 @@ body
   height: 70px
   justify-content: space-between
   padding: 0
+  transition: all 0.7s
+
   .content
     display: flex
     align-items: center
-    .nav-links
-      margin-left: 80px
-      display: flex
+    &::before
+      position: absolute
+      content: ''
+      z-index: -1
+      left: 0
+      top: 0
+      height: 100%
+      width: 100%
+      background-color: $black-background
+      transition: transform 0.3s ease
+      transform: scaleX(0)
+      transform-origin: left
+
+.nav-links
+  margin-left: 80px
+  display: flex
+  text-decoration: none
+  a
+    font-size: 18px
+    font-weight: 500
+    color: $text-color
+    transition: 0.3s
+    padding: 7px 17px
+    margin: 2px
+    border-radius: 5px
+    &:hover
       text-decoration: none
-      a
-        font-size: 18px
-        font-weight: 500
-        color: $text-color
-        transition: 0.3s
-        padding: 7px 17px
-        border-radius: 5px
-        &:hover
-          text-decoration: none
-          background-color: $btn-color
+      background-color: $btn-color
 
       // a
       //   @include link
@@ -77,6 +100,7 @@ body
 .navbar-scroll
   padding: 10px 50px
   background-color: $black-background
+  z-index: 9999
 
 .brand
   font-weight: bold
@@ -91,7 +115,7 @@ body
     vertical-align: middle
     border-bottom: solid 2px $btn-color
 
-.search-icon
+.search-icon , .menu-icon
   color: $text-color
   font-size: 18px
   cursor: pointer
@@ -102,6 +126,9 @@ body
   &:hover
     color: $btn-color
 
+.menu-icon
+  display: none
+
 .search-box
   position: absolute
   height: 100%
@@ -111,7 +138,7 @@ body
   pointer-events: none
   transition: all 0.3s ease
   input
-    width: 100%
+    width: calc(100% - 20px)
     height: 100%
     border: none
     outline: none
@@ -140,18 +167,18 @@ body
     color: $btn-color
 
 #show-search
+  &:checked ~ .menu-icon
+    display: none
   &:checked ~ .search-box
     opacity: 1
     pointer-events: auto
   &:checked ~ .content
     opacity: 0
     pointer-events: none
-
-  // #show-search
-  //   &:checked ~ .search-icon
-  //     i
-  //       &::before
-  //         content: "\f00d"
+  &:checked ~ .search-icon
+    i
+      &::before
+        content: "\f00d"
 
 // welcome
 
@@ -168,7 +195,6 @@ body
 
 .welcome-content
   margin-top: -100px
-
 
 .notice
   color: $special-text
@@ -190,14 +216,12 @@ body
 
 // ourteam
 
-
 .team
   @include links
   a
     text-decoration: none
     &:hover
       text-decoration: none
-
 
 .person-profile
   width: 300px
@@ -223,62 +247,65 @@ body
     img
       border-color: #e3e2df
       box-shadow: 0 0 0 38em #c3073f
-  .name
-    @include link
-    width: 100%
-    display: block
-  img
-    color: #e3e2df
-    width: 150px !important
-    height: 150px
-    margin: 5px auto
-    border-radius: 50%
-    border: solid #c3073f 4px
-    overflow: hidden
-    transition: all 0.7s ease
-  .job
-    @include link
-    height: auto
-    width: 100%
-    display: block
+
+.name
+  @include link
+  width: 100%
+  display: block
+
+img
+  color: #e3e2df
+  width: 150px !important
+  height: 150px
+  margin: 5px auto
+  border-radius: 50%
+  border: solid #c3073f 4px
+  overflow: hidden
+  transition: all 0.7s ease
+
+.job
+  @include link
+  height: auto
+  width: 100%
+  display: block
 
 .our-team
   max-width: 100%
   margin: 50px 50px
   height: 100%
 
-  .notice-exp
-    width: 100%
-    position: relative
-    color: #e3e2df
-    text-align: center
-    font-size: 3rem
-    display: inline-block
-    user-select: none
-    margin-bottom: 60px
+.notice-exp
+  width: 100%
+  position: relative
+  color: #e3e2df
+  text-align: center
+  font-size: 3rem
+  display: inline-block
+  user-select: none
+  margin-bottom: 60px
 
-  .notice-exp::before
-    content: ""
-    position: absolute
-    bottom: -25px
-    left: 50%
-    transform: translateX(-50%)
-    width: 180px
-    height: 5px
-    background-color: #c3073f
-    border-radius: 20px
+.notice-exp::before
+  content: ""
+  position: absolute
+  bottom: -25px
+  left: 50%
+  transform: translateX(-50%)
+  width: 180px
+  height: 5px
+  background-color: #c3073f
+  border-radius: 20px
 
-  .notice-exp::after
-    content: "Who we are"
-    position: absolute
-    bottom: -40px
-    left: 50%
-    padding: 5px 10px
-    background-color: #212121
-    transform: translateX(-50%)
-    font-size: 17px
-    color: #e3e2df
-    border-radius: 20px
+.notice-exp::after
+  content: "Who we are"
+  position: absolute
+  bottom: -40px
+  left: 50%
+  padding: 5px 10px
+  background-color: #212121
+  transform: translateX(-50%)
+  font-size: 17px
+  color: #e3e2df
+  border-radius: 20px
 
 .owl-dots
     text-align: center
@@ -297,8 +324,7 @@ body
     width: 35px
     border-radius: 14px
 
-.owl-dot.active,
-.owl-dot:hover
+.owl-dot.active , .owl-dot:hover
     background: crimson!important
 
 .owl-carousel
@@ -340,7 +366,6 @@ body
     background-color: $black-background
     width: 100%
     height: 400px
-
     display: block
     p
     color: green
@@ -353,3 +378,84 @@ body
       font-size: 17px
       font-weight: bold
       user-select: none
+
+// responsive code
+@media screen and (max-width: $big)
+  .navbar-scroll
+    .navbar
+      padding: 0
+    .search-box
+      padding-top: 0
+      max-width: calc(100% - 50px)
+      .go-icon
+        transform: translateY(-50%)
+
+  .navbar
+    max-width: 100%
+    padding: 60px 100px
+
+  .search-box
+    padding-top: 60px
+    max-width: calc(100% - 270px)
+
+  .go-icon
+    transform: translateY(8%)
+    right: 0
+
+  .nav-links
+    margin-left: 30px
+    a
+      padding: 8px 13px
+
+@media screen and (max-width: $medium)
+
+  .navbar
+    padding: 0
+    .search-box
+      padding-top: 0
+      max-width: calc(100% - 120px)
+      input
+        margin-left: 25px
+      .go-icon
+        transform: translateY(-50%)
+
+  #show-menu
+    &:checked ~ .content
+      .nav-links
+        left: 0
+    &:checked ~ .menu-icon
+      i
+        &::before
+          content: "\f00d"
+    &:checked ~ .content
+      &::before
+        transform: scaleX(1) !important
+
+  .menu-icon
+    display: block
+
+  .navbar-scroll
+    padding: 0px
+    .go-icon
+      right: -50px
+
+  .navbar
+    padding: 0px 25px
+
+  .nav-links
+    display: block
+    position: fixed
+    background: $navbar-bg
+    height: 100%
+    width: 100%
+    top: 70px
+    left: -100%
+    margin-left: 0
+    max-width: 350px
+    transition: all 0.3s ease
+    a
+      margin: 15px 20px
+      line-height: 40px
+      font-size: 20px
+      display: block
+      padding: 8px 18px

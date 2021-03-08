@@ -11,6 +11,9 @@ $text-color: #c5c6c7
 $special-text: #66fcf1
 $btn-color: #45a29e
 $navbar-bg: #222
+$scroll-bar-hover: #44a7a0
+$copyright-footer: #1a1a1d
+$footer: #202224
 
 // beackpoints var
 $big: 1280px
@@ -338,13 +341,16 @@ img
     width: 10px
 
 ::-webkit-scrollbar-track
-    background: #f1f1f1
+    background: $black-background
 
 ::-webkit-scrollbar-thumb
-    background: #888
+    background: $special-text
+    transition: 0.3s ease
+    border-radius: 10px
+
 
 ::-webkit-scrollbar-thumb:hover
-    background: #555
+    background: $scroll-bar-hover
 
 
 .category
@@ -364,21 +370,53 @@ img
 // footer
 
 .footer
-    background-color: $black-background
+    background-color: $footer
     width: 100%
     height: 400px
     display: block
-    p
-    color: green
-    padding: 10px 50px
-    font-weight: bold
-    text-align: center
-    user-select: none
-    span
-      color: #e3e2df
-      font-size: 17px
-      font-weight: bold
-      user-select: none
+    .footer-content
+      display: flex
+      box-sizing: border-box
+      text-align: center
+      height: 100%
+      width: 100%
+      .footer-col-1
+        height: 100%
+        width: calc(98% / 3)
+        display: flex
+        margin: 0px
+        padding: 0
+        color: red
+      .footer-col-2
+        height: 100%
+        width: calc(98% / 3)
+        margin: 0px
+        padding: 0
+        display: flex
+      .footer-col-3
+        height: 100%
+        width: calc(98% / 3)
+        margin: 0px
+        padding: 0
+        display: flex
+    .copyright
+      background: $copyright-footer
+      p
+        color: $text-color
+        padding: 10px 50px
+        font-weight: bold
+        text-align: center
+        user-select: none
+      a
+        display: inline-block
+        color: #45a29e
+        text-decoration: none
+        font-size: 17px
+        font-weight: bold
+        transition: all 0.3s
+        &:hover
+          color: $special-text
+
 
 // responsive code
 @media screen and (max-width: $big)

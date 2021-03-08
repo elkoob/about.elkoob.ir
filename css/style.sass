@@ -4,7 +4,6 @@
 
 @tailwind utilities
 
-
 // colors var
 $black-background: #272727
 $dark-background: #1f2833
@@ -14,10 +13,9 @@ $btn-color: #45a29e
 $navbar-bg: #222
 
 // beackpoints var
-$big: 1250px
+$big: 1280px
 $medium: 900px
-
-
+$small: 480px
 
 @mixin link
     color: $text-color
@@ -57,7 +55,7 @@ body
   margin: 0 auto
   height: 70px
   justify-content: space-between
-  padding: 0
+  padding: 60px 100px
   transition: all 0.7s
 
   .content
@@ -101,6 +99,8 @@ body
   padding: 10px 50px
   background-color: $black-background
   z-index: 9999
+  .navbar
+    padding: 0
 
 .brand
   font-weight: bold
@@ -132,11 +132,12 @@ body
 .search-box
   position: absolute
   height: 100%
-  max-width: calc(100% - 50px)
+  max-width: calc(100% - 270px)
   width: 100%
   opacity: 0
   pointer-events: none
   transition: all 0.3s ease
+  padding-top: 60px
   input
     width: calc(100% - 20px)
     height: 100%
@@ -151,9 +152,9 @@ body
 
 .go-icon
   position: absolute
-  right: 10px
+  right: 0px
   top: 50%
-  transform: translateY(-50%)
+  transform: translateY(8%)
   line-height: 60px
   width: 70px
   background: none
@@ -186,7 +187,7 @@ body
   width: 100%
   height: 100vh
   display: flex
-  background-image: url(../assets/imgs/background-dark.jpg)
+  background-image: url(https://imgs.elkoob.ir/about/background-dark.jpg)
   background-repeat: no-repeat
   background-position: left
   background-size: cover
@@ -459,3 +460,35 @@ img
       font-size: 20px
       display: block
       padding: 8px 18px
+@media screen and (max-width: $small)
+  #show-menu
+    &:checked ~ .menu-icon
+      margin-left: -20px
+    &:checked ~ .search-icon
+      margin-right: -20px
+  .navbar-scroll
+    .search-icon , .menu-icon
+      margin: 0!important
+    .search-box
+      .go-icon
+        right: -80px!important
+        width: 40px
+  .navbar
+    height: 50px
+    .menu-icon , .search-icon
+      line-height: 50px
+      font-size: 15px
+      width: 40px
+    .search-box
+      .go-icon
+        right: -30px
+        width: 40px
+    .content
+      .brand
+        font-size: 20px
+      .nav-links
+        top: 50px
+        max-width: 250px
+        a
+          font-size: 16px
+          line-height: 25px

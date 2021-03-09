@@ -378,7 +378,7 @@ img
 .footer
     background-color: $footer
     width: 100%
-    height: 400px
+    height: 380px
     display: block
     .footer-content
       display: flex
@@ -386,9 +386,13 @@ img
       text-align: center
       height: 100%
       width: 100%
+      .footer-contact
+        padding-left: 110px !important
+      .footer-logo
+        padding-left: 100px !important
       .footer-logo , .footer-contact , .footer-followus
         height: 100%
-        width: calc(98% / 3)
+        width: calc(100% / 3)
         padding: 20px 40px
         color: $text-color
         font-weight: 700
@@ -579,7 +583,16 @@ img
       padding: 8px 13px
 
   //footer
+  .footer
+    .footer-content
+      .footer-followus , .footer-contact , .footer-logo
+        h1
+          font-size: 1.75rem
+      .footer-followus
+        padding-left: 100px
 
+        nav
+          max-width: 200px
 @media screen and (max-width: $medium)
   // navbar
   .navbar

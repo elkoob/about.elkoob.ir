@@ -14,6 +14,7 @@ $navbar-bg: #222
 $scroll-bar-hover: #44a7a0
 $copyright-footer: #1a1a1d
 $footer: #202224
+$footer-header: #edf5e1
 
 // beackpoints var
 $big: 1280px
@@ -385,25 +386,145 @@ img
       text-align: center
       height: 100%
       width: 100%
-      .footer-col-1
+      .footer-logo , .footer-contact , .footer-followus
         height: 100%
         width: calc(98% / 3)
-        display: flex
-        margin: 0px
-        padding: 0
-        color: red
-      .footer-col-2
-        height: 100%
-        width: calc(98% / 3)
-        margin: 0px
-        padding: 0
-        display: flex
-      .footer-col-3
-        height: 100%
-        width: calc(98% / 3)
-        margin: 0px
-        padding: 0
-        display: flex
+        padding: 20px 40px
+        color: $text-color
+        font-weight: 700
+        font-size: 30px
+        user-select: none
+        nav
+          text-align: left
+        .contact-exp , .followus-exp
+          i
+            padding-right: 15px
+            color: $special-text
+        .contact-exp
+          padding: 10px 0px
+          position: relative
+          overflow: hidden
+          transition: all 0.3s ease
+          .fas , .fab
+            transition: all 0.3s
+          &::before
+            content: ''
+            width: 100%
+            position: absolute
+            right: 100%
+            bottom: 0
+            border-bottom: solid 2px $special-text
+          &:hover
+            &::before
+              content: ''
+              transition: all 0.7s
+              right: 0%
+          *
+        .followus-exp
+          position: relative
+          display: inline-block
+          margin: 10px 15px 0 0
+          width: 40px
+          height: 40px
+          i
+            transition: all 0.3s ease
+            position: relative
+            font-size: 25px
+            display: flex
+            align-items: center
+            border-radius: 50%
+            height: 40px
+            width: 40px
+            border: solid 2px $special-text
+            &::before
+              transform: translateX(-50%)
+              position: absolute
+              left: 50%
+          &:hover
+            .fa-youtube
+                color: #ff4e45
+                border-color: #ff4e45
+                font-size: 27px
+            .fa-telegram
+                color: #179cde
+                border-color: #179cde
+                font-size: 27px
+            .fa-instagram
+                color: #FF9800
+                border-color: #FF9800
+                font-size: 27px
+            .fa-aparat
+                color: #263238
+                border-color: #263238
+                font-size: 27px
+          p
+            border-radius: 50px
+            margin: 0 auto
+            height: 40px
+            width: 40px !important
+            transition: all 0.3s ease
+            border: solid 2px $special-text
+            background-image: url("../assets/imgs/aparatlogo.png")
+            background-color: $footer
+            background-repeat: no-repeat
+            background-position: center
+            background-size: cover
+            &:hover
+              background-image: url("../assets/imgs/aparatlogo-hover.png")
+              border-color: #E91E63 !important
+
+
+        .ourteam-link
+          width: max-content
+          overflow: hidden
+          font-size: 17px
+          margin-top: 20px
+          a
+            position: relative
+            width: max-content
+            border-radius: 10px
+            overflow: hidden
+            text-decoration: none
+            transition: all 0.7s
+            color: $text-color
+            &::before
+              content: ''
+              width: 100%
+              position: absolute
+              right: 350px
+              bottom: 0
+              border-bottom: dashed 2px $text-color
+            &::after
+              content: ''
+              width: 100%
+              position: absolute
+              left: 0
+              bottom: 0
+              border-bottom: dashed 2px $text-color
+            &:hover
+              &::before
+                content: ''
+                transition: all 0.7s
+                right: 0
+              &::after
+                content: ''
+                transition: all 0.7s
+                left: 350px
+
+        h1
+          height: max-content
+          width: 100%
+          display: block
+          padding: 50px 0px 20px 0
+          text-align: left
+          font-style: italic
+          color: $footer-header
+        ul , p
+          padding: 0
+          font-size: 17px
+          font-weight: normal
+          text-align: left
+
     .copyright
       background: $copyright-footer
       p
@@ -557,3 +678,23 @@ img
         font-size: 10px
         a
           font-size: 12px
+
+// &::before
+//   content: ''
+//   position: absolute
+//   z-index: -2
+//   left: -50%
+//   top: -50%
+//   width: 200%
+//   height: 200%
+//   animation: rotate 4s linear infinite
+// &::after
+//   content: ''
+//   position: absolute
+//   z-index: -1
+//   left: 6px
+//   top: 6px
+//   width: calc(100% - 12px)
+//   height: calc(100% - 12px)
+//   background: white
+//   border-radius: 5px

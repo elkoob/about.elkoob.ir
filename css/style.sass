@@ -425,6 +425,7 @@ img
 
 // responsive code
 @media screen and (max-width: $big)
+  // navbar
   .navbar-scroll
     .navbar
       padding: 0
@@ -451,8 +452,10 @@ img
     a
       padding: 8px 13px
 
-@media screen and (max-width: $medium)
+  //footer
 
+@media screen and (max-width: $medium)
+  // navbar
   .navbar
     padding: 0
     .search-box
@@ -503,7 +506,17 @@ img
       font-size: 20px
       display: block
       padding: 8px 18px
+  //footer
+  .footer
+    .copyright
+      p
+        padding: 10px 5px
+        font-size: 14px
+        a
+          font-size: 16px
+
 @media screen and (max-width: $small)
+  // navbar
   #show-menu
     &:checked ~ .menu-icon
       margin-left: -20px
@@ -535,3 +548,12 @@ img
         a
           font-size: 16px
           line-height: 25px
+
+  //footer
+  .footer
+    .copyright
+      p
+        padding: 10px 5px
+        font-size: 10px
+        a
+          font-size: 12px

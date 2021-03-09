@@ -465,12 +465,27 @@ img
                 color: #FF9800
                 border-color: #FF9800
                 font-size: 27px
+            .fa-discord
+                color: #7289da
+                border-color: #7289da
+                font-size: 27px
+            .fa-whatsapp
+                color: #4CAF50
+                border-color: #4CAF50
+                font-size: 27px
             .fa-aparat
                 color: #263238
                 font-size: 27px
                 background-image: url("../assets/imgs/aparatlogo-hover.png")
                 border-color: #E91E63
-          p
+                background-color: $footer-header
+            .fa-gap
+                color: #263238
+                font-size: 27px
+                background-image: url("../assets/imgs/gaplogo-hover.png")
+                border-color: #6e47c6
+                // background-color: $footer-header
+          .fa-aparat , .fa-gap
             border-radius: 50px
             margin: 0 auto
             height: 40px
@@ -482,7 +497,8 @@ img
             background-repeat: no-repeat
             background-position: center
             background-size: cover
-
+          .fa-gap
+            background-image: url("../assets/imgs/gaplogo.png")
         .ourteam-link
           width: max-content
           overflow: hidden
@@ -584,15 +600,35 @@ img
 
   //footer
   .footer
+    height: 340px 
     .footer-content
       .footer-followus , .footer-contact , .footer-logo
+        padding: 0
         h1
           font-size: 1.75rem
       .footer-followus
-        padding-left: 100px
-
+        padding-left: 50px
+        h1
+          max-width: 200px
+          margin: 0 auto
+          text-align: center
         nav
           max-width: 200px
+          text-align: center
+          margin: 0 auto
+          .followus-exp
+            margin: 10px 10px 0 10px
+      .footer-contact
+        max-width: 200px
+        padding: 0 !important
+        margin: 0 auto
+        .contact-exp
+          font-size: 15px
+      .footer-logo
+        max-width: 300px
+        padding: 0 !important
+        margin: 0 auto
+
 @media screen and (max-width: $medium)
   // navbar
   .navbar

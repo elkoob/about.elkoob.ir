@@ -445,6 +445,13 @@ img
               position: absolute
               left: 50%
           &:hover
+            .fab
+              border: none
+              font-size: 40px!important
+            p
+              width: 45px!important
+              height: 45px!important
+              border: none
             .fa-youtube
                 color: #ff4e45
                 border-color: #ff4e45
@@ -489,7 +496,7 @@ img
             border-radius: 50px
             margin: 0 auto
             height: 40px
-            width: 40px !important
+            width: 40px
             transition: all 0.3s ease
             border: solid 2px $special-text
             background-image: url("../assets/imgs/aparatlogo.png")
@@ -600,7 +607,7 @@ img
 
   //footer
   .footer
-    height: 340px 
+    height: 340px
     .footer-content
       .footer-followus , .footer-contact , .footer-logo
         padding: 0
@@ -683,6 +690,12 @@ img
       padding: 8px 18px
   //footer
   .footer
+    .footer-content
+      .footer-logo
+        display: none
+      .footer-contact , .footer-followus
+        width: calc(100% / 2)
+        padding-left: 0
     .copyright
       p
         padding: 10px 5px
@@ -726,6 +739,37 @@ img
 
   //footer
   .footer
+    height: 100%
+    .footer-content
+      display: block
+      .footer-logo
+        display: none
+      .footer-contact , .footer-followus
+        width: 100%
+        h1
+          font-size: 20px
+          padding-top: 20px
+        ul
+          font-size: 15px
+      .footer-followus
+        nav
+          padding-bottom: 20px
+          .followus-exp
+            margin: 5px 5px 0 5px
+            width: 25px
+            height: 25px
+            i , p
+              font-size: 20px
+              width: 25px!important
+              height: 25px!important
+            &:hover
+              .fab
+                border: none
+                font-size: 35px
+              p
+                width: 30px!important
+                height: 30px!important
+                border: none
     .copyright
       p
         padding: 10px 5px

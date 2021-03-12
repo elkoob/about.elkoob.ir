@@ -239,23 +239,24 @@ body
   padding: 25px 35px
   text-align: center
   overflow: hidden
-  color: #e3e2df
+  color: $text-color
   vertical-align: top
   display: inline-block
   transition: all 0.3s ease
-  border: solid #c3073f 0px
   border-radius: 6px
   cursor: pointer
-  background-color: rgba( 33, 33, 33, .8)
+  background-color: rgba( 32, 34, 36, .8)
   .zoom
     transition: all 0.3s ease
   &:hover
-    color: #c3073f !important
+    color: $dark-background
     .zoom
       transform: scale(1.05)
     img
-      border-color: #e3e2df
-      box-shadow: 0 0 0 38em #c3073f
+      border-color: $dark-background
+      box-shadow: 0 0 0 38em $special-text
+    p
+      color: $dark-background
 
 .name
   color: $text-color
@@ -271,11 +272,11 @@ body
   display: block
 
 img
-  color: #e3e2df
+  color: $text-color
   width: 150px !important
   margin: 5px auto
   border-radius: 50%
-  border: solid #c3073f 4px
+  border: solid $special-text 4px
   overflow: hidden
   transition: all 0.7s ease
 
@@ -301,7 +302,7 @@ img
 .notice-exp
   width: 100%
   position: relative
-  color: #e3e2df
+  color: $footer-header
   text-align: center
   font-size: 3rem
   display: inline-block
@@ -316,7 +317,7 @@ img
   transform: translateX(-50%)
   width: 180px
   height: 5px
-  background-color: #c3073f
+  background-color: $special-text
   border-radius: 20px
 
 .notice-exp::after
@@ -325,7 +326,7 @@ img
   bottom: -40px
   left: 50%
   padding: 5px 10px
-  background-color: #212121
+  background-color: $footer
   transform: translateX(-50%)
   font-size: 17px
   color: #e3e2df
@@ -341,7 +342,7 @@ img
     margin: 0 5px
     outline: none!important
     border-radius: 50%
-    border: 2px solid crimson!important
+    border: 2px solid $special-text!important
     transition: all 0.3s ease
 
 .owl-dot.active
@@ -349,7 +350,7 @@ img
     border-radius: 14px
 
 .owl-dot.active , .owl-dot:hover
-    background: crimson!important
+    background: $special-text!important
 
 .owl-carousel
   z-index: auto

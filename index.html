@@ -23,121 +23,124 @@
 
 </head>
 <body>
-  <!-- navbar  -->
-  <div class="wrapper">
-    <nav class="navbar">
-      <input type="checkbox" name="" value="" id="show-search">
-      <input type="checkbox" name="" value="" id="show-menu">
-      <label for="show-menu" class="menu-icon"><i class="fa fa-bars"></i></label>
-      <div class="content">
-        <a class="brand" href="#">Elkoob Team</a>
-        <div class="nav-links">
-          <a href="#">Team worked</a>
-          <a href="#">Members</a>
-          <a href="#">contacts</a>
+  <div id="app">
+      
+    <!-- navbar  -->
+    <div class="wrapper">
+      <nav class="navbar">
+        <input type="checkbox" name="" value="" id="show-search">
+        <input type="checkbox" name="" value="" id="show-menu">
+        <label for="show-menu" class="menu-icon"><i class="fa fa-bars"></i></label>
+        <div class="content">
+          <a class="brand" href="#">Elkoob Team</a>
+          <div class="nav-links">
+            <a href="#">Team worked</a>
+            <a href="#">Members</a>
+            <a href="#">contacts</a>
+          </div>
+        </div>
+        <label for="show-search" class="search-icon"><i class="fa fa-search"></i></label>
+        <form class="search-box" action="index.html" method="post">
+          <input type="text" name="" value="" placeholder="Type to search..." required>
+          <button class="go-icon" type="submit" name="button"><i class="fa fa-long-arrow-alt-right"></i></button>
+        </form>
+      </nav>
+    </div>
+      <!-- welcome section  -->
+      <section class="welcome">
+          <div class="welcome-content">
+            <p class="notice">Working on GitHub!</p>
+            <div class="links">
+              <a href="https://my.elkoob.ir">E-panel</a>
+              <a href="#">Youtube</a>
+              <a href="https://www.aparat.com/elkoob">Aparat</a>
+              <a href="https://github.com/elkoob">Github</a>
+              <a href="https://github.com/elkoob/about.elkoob.ir">this page</a>
+          </div>
+      </section>
+
+      <!-- ourteam section -->
+      <section class="our-team">
+        <div class="content">
+          <p class="notice-exp">Our Team</p>
+          <div class="team carousel owl-carousel">
+            <a class="person-profile" href="#">
+              <div class="zoom">
+                <img src="https://imgs.elkoob.ir/about/amir.jpg" alt="...">
+                <p class="name">Amir abass Kheiry</p>
+                <p class="job">Team header, Electronic man, Backend developer</p>
+              </div>
+            </a>
+            <a class="person-profile" href="#">
+              <div class="zoom">
+                <img src="https://imgs.elkoob.ir/about/Ledrif.jpg" alt="...">
+                <p class="name">Mahdi Deldadeh</p>
+                <p class="job">Frontend developer, Electronic man , Youtuber of Team</p>
+              </div>
+            </a>
+            <a class="person-profile" href="#">
+              <div class="zoom">
+                <img src="https://imgs.elkoob.ir/about/alireza.jpg" alt="...">
+                <p class="name">Alireza Mohseni</p>
+                <p class="job"> Poster designer, Logo designer, 3D designer</p>
+              </div>
+            </a>
+            <a class="person-profile" href="#">
+              <div class="zoom">
+                <img src="https://imgs.elkoob.ir/about/team-made.jpg" alt="...">
+                <p class="name">Mohammad Hossein Rafi</p>
+                <p class="job">Electronic man, Backend developer, Windows developer</p>
+              </div>
+            </a>
+            <a class="person-profile" href="#">
+              <div class="zoom">
+                <img src="https://imgs.elkoob.ir/about/team-made.jpg" alt="...">
+                <p class="name">Mohammad Mahdi Najafi</p>
+                <p class="job"> Computer Hardware, Electronic man</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h1>Logo</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="ourteam-link">
+            <a href="#">Our Team</a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h1>Contact</h1>
+          <ul>
+            <li class="contact-exp"><i class="fas fa-map-marker-alt"></i> Qom, koche 1 :)</li>
+            <li class="contact-exp"><i class="fas fa-phone-alt"></i> Phone: +989123456789</li>
+            <li class="contact-exp"><i class="fas fa-envelope"></i> Email: info@elkoob.ir</li>
+            <li class="contact-exp"><i class="fab fa-skype"></i> Skype: somthing</li>
+          </ul>
+        </div>
+        <div class="footer-followus">
+          <h1>Follow Us</h1>
+          <nav>
+            <a href="#" class="followus-exp"><p class="fa-aparat"></p></a>
+            <a href="#" class="followus-exp"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="followus-exp"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="followus-exp"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="followus-exp"><i class="fab fa-gitlab"></i></a>
+            <a href="#" class="followus-exp"><i class="fab fa-github"></i></a>
+            <a href="#" class="followus-exp"><i class="fab fa-discord"></i></a>
+            <a href="#" class="followus-exp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="followus-exp"><p class="fa-gap"></p></a>
+          </nav>
         </div>
       </div>
-      <label for="show-search" class="search-icon"><i class="fa fa-search"></i></label>
-      <form class="search-box" action="index.html" method="post">
-        <input type="text" name="" value="" placeholder="Type to search..." required>
-        <button class="go-icon" type="submit" name="button"><i class="fa fa-long-arrow-alt-right"></i></button>
-      </form>
-    </nav>
+      <div class="copyright">
+        <p> Copyright © 2020 | Theme by <a href="https://www.about.elkoob.ir">Elkoob Team</a> | All rights reserved </p>
+      </div>
+    </footer>
   </div>
-    <!-- welcome section  -->
-    <section class="welcome">
-        <div class="welcome-content">
-          <p class="notice">Working on GitHub!</p>
-          <div class="links">
-            <a href="https://my.elkoob.ir">E-panel</a>
-            <a href="#">Youtube</a>
-            <a href="https://www.aparat.com/elkoob">Aparat</a>
-            <a href="https://github.com/elkoob">Github</a>
-            <a href="https://github.com/elkoob/about.elkoob.ir">this page</a>
-        </div>
-    </section>
-
-    <!-- ourteam section -->
-    <section class="our-team">
-      <div class="content">
-        <p class="notice-exp">Our Team</p>
-        <div class="team carousel owl-carousel">
-          <a class="person-profile" href="#">
-            <div class="zoom">
-              <img src="https://imgs.elkoob.ir/about/amir.jpg" alt="...">
-              <p class="name">Amir abass Kheiry</p>
-              <p class="job">Team header, Electronic man, Backend developer</p>
-            </div>
-          </a>
-          <a class="person-profile" href="#">
-            <div class="zoom">
-              <img src="https://imgs.elkoob.ir/about/Ledrif.jpg" alt="...">
-              <p class="name">Mahdi Deldadeh</p>
-              <p class="job">Frontend developer, Electronic man , Youtuber of Team</p>
-            </div>
-          </a>
-          <a class="person-profile" href="#">
-            <div class="zoom">
-              <img src="https://imgs.elkoob.ir/about/alireza.jpg" alt="...">
-              <p class="name">Alireza Mohseni</p>
-              <p class="job"> Poster designer, Logo designer, 3D designer</p>
-            </div>
-          </a>
-          <a class="person-profile" href="#">
-            <div class="zoom">
-              <img src="https://imgs.elkoob.ir/about/team-made.jpg" alt="...">
-              <p class="name">Mohammad Hossein Rafi</p>
-              <p class="job">Electronic man, Backend developer, Windows developer</p>
-            </div>
-          </a>
-          <a class="person-profile" href="#">
-            <div class="zoom">
-              <img src="https://imgs.elkoob.ir/about/team-made.jpg" alt="...">
-              <p class="name">Mohammad Mahdi Najafi</p>
-              <p class="job"> Computer Hardware, Electronic man</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <h1>Logo</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <div class="ourteam-link">
-          <a href="#">Our Team</a>
-        </div>
-      </div>
-      <div class="footer-contact">
-        <h1>Contact</h1>
-        <ul>
-          <li class="contact-exp"><i class="fas fa-map-marker-alt"></i> Qom, koche 1 :)</li>
-          <li class="contact-exp"><i class="fas fa-phone-alt"></i> Phone: +989123456789</li>
-          <li class="contact-exp"><i class="fas fa-envelope"></i> Email: info@elkoob.ir</li>
-          <li class="contact-exp"><i class="fab fa-skype"></i> Skype: somthing</li>
-        </ul>
-      </div>
-      <div class="footer-followus">
-        <h1>Follow Us</h1>
-        <nav>
-          <a href="#" class="followus-exp"><p class="fa-aparat"></p></a>
-          <a href="#" class="followus-exp"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="followus-exp"><i class="fab fa-telegram"></i></a>
-          <a href="#" class="followus-exp"><i class="fab fa-youtube"></i></a>
-          <a href="#" class="followus-exp"><i class="fab fa-gitlab"></i></a>
-          <a href="#" class="followus-exp"><i class="fab fa-github"></i></a>
-          <a href="#" class="followus-exp"><i class="fab fa-discord"></i></a>
-          <a href="#" class="followus-exp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="followus-exp"><p class="fa-gap"></p></a>
-        </nav>
-      </div>
-    </div>
-    <div class="copyright">
-      <p> Copyright © 2020 | Theme by <a href="https://www.about.elkoob.ir">Elkoob Team</a> | All rights reserved </p>
-    </div>
-  </footer>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>

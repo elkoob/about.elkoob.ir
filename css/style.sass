@@ -118,6 +118,7 @@ body
   transition: 0.7s
   color: $text-color
   text-decoration: none
+  border-bottom: solid 2px transparent
   &:hover
     text-decoration: none
     color: $special-text
@@ -196,15 +197,16 @@ body
   width: 100%
   height: 100vh
   display: flex
-  background-image: url(https://imgs.elkoob.ir/about/background-dark.jpg)
+  // background-image: url(https://imgs.elkoob.ir/about/background-dark.jpg)
+  background-image: url("../assets/imgs/background-dark-mob.jpg")
   background-repeat: no-repeat
-  background-position: left
+  background-position: 85%
   background-size: cover
   vertical-align: middle
   align-items: center
 
 .welcome-content
-  margin-top: -100px
+  padding-left: 100px
 
 .notice
   color: $special-text
@@ -219,10 +221,10 @@ body
   @include links
   a
     @include link
+    border: solid 2px transparent
     &:hover
       background-color: none
       border: solid 2px $btn-color
-      margin: 0 4px
 
 // ourteam
 
@@ -605,6 +607,12 @@ img
     a
       padding: 8px 13px
 
+  // welcome-content
+  .welcome
+    .welcome-content
+      padding: 0
+
+
   //footer
   .footer
     height: 340px
@@ -688,6 +696,39 @@ img
       font-size: 20px
       display: block
       padding: 8px 18px
+
+  // welcome-content
+  .welcome
+    background-image: url(https://imgs.elkoob.ir/about/background-dark.jpg)
+    background-position: center
+    .welcome-content
+      background-color: rgba(32, 34, 36, 0.8)
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      max-width: 450px
+      text-align: center
+      border: solid 3px $special-text
+      border-bottom: none
+      .notice
+        width: max-content
+        height: max-content
+        text-align: center
+        font-size: 2.5rem
+        margin: 0
+      .links
+        display: inline
+        width: 100%
+        line-height: 50px
+        height: 50px
+        padding: 0
+        margin: 0
+        a
+          display: inline
+          margin: 0
+
+
+
   //footer
   .footer
     .footer-content
@@ -736,6 +777,25 @@ img
         a
           font-size: 16px
           line-height: 25px
+
+  // welcome-content
+  .welcome
+    .welcome-content
+      width: 300px
+      .notice
+        width: 100%
+        padding: 0 5px
+        font-size: 27px
+        font-weight: 500
+      .links
+        width: 100%
+        line-height: 50px
+        height: 50px
+        a
+          font-size: 15px
+
+
+
 
   //footer
   .footer

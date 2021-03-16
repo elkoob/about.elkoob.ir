@@ -246,6 +246,7 @@ body
     .notice-exp
       margin-bottom: 80px
     .services
+      user-select: none
       width: 100%
       text-align: center
       margin: 0 auto
@@ -280,7 +281,7 @@ body
                 &::before
                   top: 0
           .service-logo
-            border-left: 3px solid transparent
+            border-left: 5px solid transparent
             i
               color: $special-text
               background-color: $dark-background
@@ -326,7 +327,7 @@ body
                 transition: all 0.7s
               .service-logo
                 transition: 0.1s linear
-                border-left: 3px solid $dark-background
+                border-left: 5px solid $dark-background
                 i
                   width: 50px
                   height: 50px
@@ -871,6 +872,30 @@ img
           display: inline
           margin: 0
 
+  //our-services
+  .our-services
+    .content
+      .services
+        .services-exp
+          display: inline-block
+          width: auto
+          margin: 10px 25px!important
+          div
+            div
+              div
+                .service-logo
+                  i
+                    width: 48px
+                    height: 48px
+                    font-size: 18px
+                    margin: 25px
+                    padding: 15px 8px
+                .service-exp
+                  h1
+                    font-size: 18px
+                  p
+                    font-size: 16px
+
   //ourteam
   .our-team , .our-services
     .content
@@ -957,6 +982,31 @@ img
         height: 50px
         a
           font-size: 15px
+
+  //our-services
+  .our-services
+    .content
+      .services
+        .services-exp
+          display: inline-block
+          width: auto
+          margin: 8px 15px!important
+          div
+            div
+              div
+                .service-logo
+                  i
+                    width: 46px
+                    height: 46px
+                    font-size: 16px
+                    margin: 20px
+                    padding: 15px 6px
+                .service-exp
+                  h1
+                    font-size: 16px
+                  p
+                    font-size: 14px
+
 
 
 

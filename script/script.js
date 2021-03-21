@@ -8,6 +8,36 @@ $(window).scroll(function(){
     }
 });
 
+
+//scroll for starting counting of ourskills
+
+let options = {
+  startAngle: -1.6,
+  size: 100,
+  value: 1,
+  fill: {color: "#45a29e"}
+}
+$(".circular").circleProgress(options).on('circle-animation-progress', function(event, progress, stepValue){
+  $(this).find(".number").text(String(stepValue.toFixed(2).substr(2)) + "%");
+});
+
+$(".script-team .circular").circleProgress({
+  value: 0.99,
+});
+
+$(".web-team .circular").circleProgress({
+  value: 0.30,
+});
+
+$(".graphic-team .circular").circleProgress({
+  value: 0.80,
+});
+
+$(".electronic-team .circular").circleProgress({
+  value: 0.90,
+});
+
+
 // owl carousel script
 $('.carousel').owlCarousel({
     margin: 20,

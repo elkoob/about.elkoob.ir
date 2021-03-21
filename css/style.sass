@@ -22,6 +22,20 @@ $big: 1280px
 $medium: 900px
 $small: 480px
 
+
+//frame works (animations)
+@keyframes left
+  100%
+    transform: rotate(180deg)
+
+@keyframes right
+  100%
+    transform: rotate(180deg)
+
+
+
+//styles
+
 body
   width: 100%
   height: 100%
@@ -245,6 +259,8 @@ body
   .content
     .notice-exp
       margin-bottom: 80px
+      &::after
+        content: 'How we can help'
     .services
       user-select: none
       width: 100%
@@ -352,9 +368,86 @@ body
                   font-size: 18px
                   text-align: left
 
+//ourskills
+
+.our-skills
+  padding: 0 0 20px 0
+  margin-top: 70px
+  position: relative
+  background-color: rgba(32, 34, 36, 0.5)
+  &::before
+    content: ''
+    height: 100%
+    width: 100%
+    position: absolute
+    top: 0
+    left: 0
+    background-position: center
+    filter: blur(2px)
+    background-repeat: no-repeat
+    background-size: cover
+    background-image: url(../assets/imgs/code1.jpg)
+    z-index: -1
+  .content
+    .notice-exp
+      &::after
+        content: 'Skills in Sections'
+    .counters
+      user-select: none
+      display: flex
+      justify-content: space-evenly
+      margin-top: 40px
+      .script-team , .web-team , .electronic-team , .graphic-team
+        margin: 0 5px
+        width: 250px
+        max-width: 250px
+        background-color: #1a2029cc
+        border-radius: 10px
+        padding: 35px 20px
+        display: grid
+        justify-items: center
+        h1
+          font-size: 20px
+          font-weight: 700
+          padding-top: 20px
+          color: $btn-color
+        p
+          padding-top: 5px
+          color: $text-color
+        .circular
+          display: flex
+          height: 100px
+          width: 100px
+          position: relative
+          transform: scale(1.25)
+          .number
+            color: $special-text
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50% , -50%)
+            z-index: 10
+            font-size: 18px
+            font-weight: 500
+          .inner
+            width: 90px
+            height: 90px
+            position: absolute
+            top: 50%
+            left: 50%
+            z-index: 6
+            margin: -45px 0 0 -45px
+            background: rgba(32, 34, 36, 1)
+            border-radius: 100%
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2)
+
 
 
 // ourteam
+.our-team
+  max-width: 100%
+  margin: 70px 50px
+  height: 100%
 
 .team
   text-align: center
@@ -426,10 +519,6 @@ img
   width: 100%
   display: block
 
-.our-team
-  max-width: 100%
-  margin: 50px 50px
-  height: 100%
 
 .notice-exp
   width: 100%
@@ -897,7 +986,7 @@ img
                     font-size: 16px
 
   //ourteam
-  .our-team , .our-services
+  .our-team , .our-services , .our-skills
     .content
       .notice-exp
         font-size: 30px

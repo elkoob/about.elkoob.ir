@@ -45,15 +45,70 @@ body
 
 // navbar-light
 #darkSwitch
-  display: none
+  appearance: none
+  -webkit-appearance: none
+  width: 60px
+  height: 30px
+  display: block
+  cursor: pointer
+  position: absolute
+  bottom: 8%
+  right: 70px
+  background: $text-color
+  border-radius: 50px
+  outline: none
+  transition: 0.3s linear
+  &::before
+    content: '\f185'
+    font-family: "Font Awesome 5 Free"
+    line-height: 25px
+    width: 25px
+    height: 25px
+    text-align: center
+    border-radius: 100%
+    background: $dark-background
+    color: $text-color
+    position: absolute
+    transition: 0.3s linear
+    top: 2.5px
+    left: 4px
+  &:checked
+    background: $btn-color
+    &::before
+      content: '\f186' !important
+      color: $copyright-footer
+      font-family: "Font Awesome 5 Free"
+      background: $text-color
+      left: 31px
+
 
 .light
   .wrapper
+    .navbar
+      .content
+        .nav-links
+          .language-select
+            .fas
+              background: $text-color
   .navbar-scroll
     background-color: #fff
     .navbar
       .content
+        .brand
+          color: $black-background
+        .nav-links
+          a
+            color: $black-background
+          .language-select
+            .fas
+              background: $text-color
   .welcome
+    background: rgba(32, 34, 36, 0.5)
+    &::before
+      display: block
+      transition: 0.3s linear
+      background-position: 0px
+
     .welcome-content
       .notice
         color: #fff
@@ -96,6 +151,18 @@ body
   margin-left: 80px
   display: flex
   text-decoration: none
+  .language-select
+    .fas
+      position: absolute
+      bottom: 8%
+      right: 20px
+      line-height: 30px
+      font-size: 20px
+      text-align: center
+      background: $btn-color
+      border-radius: 100%
+      width: 30px
+      height: 30px
   a
     font-size: 18px
     font-weight: 500
@@ -115,6 +182,19 @@ body
   z-index: 9999
   .navbar
     padding: 0
+    .search-icon
+      margin-right: 105px
+    .content
+      .nav-links
+        .language-select
+          .fas
+            top: 50%
+            transform: translateY(-50%)
+            right: 0
+        #darkSwitch
+          top: 50%
+          transform: translateY(-50%)
+          right: 50px
   .search-box
     padding-top: 0
     max-width: calc(100% - 50px)
@@ -137,6 +217,7 @@ body
 
 .search-icon , .menu-icon
   color: $text-color
+  margin-right: 25px
   font-size: 18px
   cursor: pointer
   line-height: 70px
@@ -197,6 +278,7 @@ body
     opacity: 0
     pointer-events: none
   &:checked ~ .search-icon
+    margin-right: 0
     i
       &::before
         content: "\f00d"
@@ -207,17 +289,32 @@ body
   width: 100%
   height: 100vh
   display: flex
+  transition: 0.3s linear
   background-image: url("../assets/imgs/background-dark-mob.jpg")
-  background-repeat: no-repeat
-  background-position: 85%
-  background-size: cover
   vertical-align: middle
   align-items: center
+  background-size: cover
+  background-position: 85%
+  background-repeat: no-repeat
+  &::before
+    content: ''
+    width: 100%
+    height: 100%
+    position: absolute
+    transition: 0.3s linear
+    background-size: cover
+    background-position: 40px
+    background-repeat: no-repeat
+    background-image: url("../assets/imgs/code2.jpeg")
+    z-index: -100
+
 
 .welcome-content
   padding-left: 100px
+  transition: 0.3s linear
 
 .notice
+  transition: 0.3s linear
   color: $special-text
   text-align: left
   font-size: 3rem
@@ -241,10 +338,11 @@ body
     text-decoration: none
     box-sizing: border-box
     display: inline-block
-    border: solid 2px transparent
+    border-bottom: solid 2px transparent
     &:hover
+      color: $footer-header
       background-color: none
-      border: solid 2px $btn-color
+      border-bottom: solid 2px $btn-color
 
 // our-services
 .our-services
@@ -387,7 +485,7 @@ body
   .content
     .notice-exp
       &::after
-        content: 'Skills in Sections'
+        content: 'Skills Sections'
     .counters
       user-select: none
       display: flex
@@ -878,6 +976,10 @@ img
   // navbar
   .navbar
     padding: 0
+    #darkSwitch
+      display: none
+    .language-select
+      display: none
     .search-box
       padding-top: 0
       max-width: calc(100% - 120px)

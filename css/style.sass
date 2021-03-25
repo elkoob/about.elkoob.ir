@@ -44,7 +44,7 @@ body
 // navbar
 
 // navbar-light
-#darkSwitch
+#ThemeSwitch
   appearance: none
   -webkit-appearance: none
   width: 60px
@@ -143,7 +143,7 @@ body
       height: 100%
       width: 100%
       background-color: $black-background
-      transition: transform 0.3s ease
+      transition: 0.3s ease
       transform: scaleX(0)
       transform-origin: left
 
@@ -152,7 +152,111 @@ body
   display: flex
   text-decoration: none
   .language-select
+    text-decoration: none
+    .lang-choose
+      transition: all 0.5s ease
+      position: absolute
+      background: $black-background
+      top: 120px
+      right: 20px
+      z-index: -1
+      opacity: 0
+      visibility: hidden
+      margin-left: 50px
+      .lang-Farsi , .lang-English
+        width: 100%
+        line-height: 30px
+        position: relative
+        display: block
+        text-align: center
+        margin: 0
+        border-radius: 0px
+        color: $special-text
+        transition: all 0.5s ease
+      .lang-Farsi
+        height: 50px
+        width: 100px
+        font-family: sans-serif
+        font-weight: 700
+        font-size: 20px
+        overflow: hidden
+        &::after
+          content: 'فارسی'
+          width: 100%
+          height: 100%
+          position: absolute
+          top: 0
+          left: -100%
+          transition: 0.3s linear
+          z-index: 2
+          background: rgba(32, 34, 36, 0.5)
+          line-height: 50px
+        &::before
+          content: ''
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          position: absolute
+          background: url("../assets/imgs/Iran-flag.jfif")
+          background-repeat: no-repeat
+          background-position: center
+          background-size: cover
+          z-index: 1
+          transition: 0.3s linear
+        &:hover
+          border-left: 5px solid $special-text
+          &::after
+            left: 0
+          &::before
+            filter: blur(1px)
+      .lang-English
+        width: 100px
+        height: 50px
+        overflow: hidden
+        &::after
+          content: 'English'
+          width: 100%
+          height: 100%
+          position: absolute
+          top: 0
+          left: -100%
+          transition: 0.3s linear
+          z-index: 2
+          background: rgba(32, 34, 36, 0.5)
+          line-height: 50px
+        &::before
+          content: ''
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          position: absolute
+          background: url("../assets/imgs/UK-flag.jfif")
+          background-repeat: no-repeat
+          background-position: center
+          background-size: cover
+          z-index: 1
+          transition: 0.3s linear
+        &:hover
+          border-left: 5px solid $special-text
+          &::after
+            left: 0
+          &::before
+            filter: blur(1px)
+    &:hover
+      .lang-choose
+        opacity: 1
+        border-radius: 0 0 5px 5px
+        visibility: visible
+        .lang-English
+          border-radius: 0 0 5px 5px
+      .fas
+        color: $black-background
+        background: $text-color
     .fas
+      user-select: none
+      cursor: pointer
       position: absolute
       bottom: 8%
       right: 20px
@@ -183,18 +287,18 @@ body
   .navbar
     padding: 0
     .search-icon
-      margin-right: 105px
+      margin-right: 125px
     .content
       .nav-links
-        .language-select
-          .fas
-            top: 50%
-            transform: translateY(-50%)
-            right: 0
-        #darkSwitch
+        #ThemeSwitch
+          bottom: unset
           top: 50%
           transform: translateY(-50%)
-          right: 50px
+        .language-select
+          .fas
+            bottom: unset
+            top: 50%
+            transform: translateY(-50%)
   .search-box
     padding-top: 0
     max-width: calc(100% - 50px)
@@ -930,7 +1034,7 @@ img
     transform: translateY(8%)
     right: 0
 
-  .nav-links
+  .navnav-links
     margin-left: 30px
     a
       padding: 8px 13px
@@ -973,19 +1077,119 @@ img
         margin: 0 auto
 
 @media screen and (max-width: $medium)
+
+  // light-theme
+  .light
+    .wrapper
+      .navbar
+        .content
+          .nav-links
+            .language-select
+              .fas
+    .navbar-scroll
+      .navbar
+        .content
+          .brand
+          .nav-links
+            .language-select
+              .fas
+                &:hover
+                  background-color: $btn-color
+                  color: $text-color
+
+
+
+
   // navbar
   .navbar
     padding: 0
-    #darkSwitch
-      display: none
-    .language-select
-      display: none
+    .content
+      .nav-links
+        display: block
+        position: fixed
+        background: $navbar-bg
+        height: 100%
+        width: 100%
+        top: 70px
+        left: -100%
+        margin-left: 0
+        max-width: 350px
+        transition: all 0.3s ease
+        a , .lang-icon
+          margin: 15px 20px
+          line-height: 40px
+          font-size: 20px
+          display: block
+          padding: 8px 18px
+        #ThemeSwitch
+          top: 27.5px !important
+          bottom: unset
+          left: unset
+          right: 38px !important
+          transform: none !important
+        .language-select
+          position: static
+          line-height: unset!important
+          width: calc(100% / 2)
+          user-select: none
+          font-size: 18px
+          font-weight: 500
+          transition: 0.3s
+          border-radius: 5px
+          background: none
+          &:hover
+            .lang-icon
+              .fas
+                color: $black-background
+                background: $btn-color
+          #show-langs
+            &:checked ~ .lang-choose
+              max-height: 100vh
+          .desktop-link
+            display: none
+          .lang-label
+            margin-bottom: 0
+            &:hover
+              cursor: pointer
+              .fas
+                color: $black-background
+                background: $text-color
+          .lang-icon
+            width: 100%
+            line-height: 40px
+            transition: all 0.3s ease
+            font-size: 20px
+            font-size: 18px
+            font-weight: 500
+            padding: 7px 17px
+            border-radius: 5px
+            &:hover
+              text-decoration: none
+              background-color: $btn-color
+          .fas
+            position: inherit
+          .lang-choose
+            position: static
+            opacity: 1
+            visibility: visible
+            background: none
+            max-height: 0px
+            overflow: hidden
+            .lang-Farsi , .lang-English
+              margin: 7px 0px
+              width: auto
+              font-size: 18px
+              line-height: 30px
+              border-radius: 5px
+    .search-icon
+      margin-right: 0
     .search-box
       padding-top: 0
       max-width: calc(100% - 120px)
       input
         margin-left: 25px
       .go-icon
+        right: -50px
         transform: translateY(-50%)
 
   #show-menu
@@ -1005,29 +1209,20 @@ img
 
   .navbar-scroll
     padding: 0px
-    .go-icon
-      right: -50px
-
-  .navbar
-    padding: 0px 25px
-
-  .nav-links
-    display: block
-    position: fixed
-    background: $navbar-bg
-    height: 100%
-    width: 100%
-    top: 70px
-    left: -100%
-    margin-left: 0
-    max-width: 350px
-    transition: all 0.3s ease
-    a
-      margin: 15px 20px
-      line-height: 40px
-      font-size: 20px
-      display: block
-      padding: 8px 18px
+    .navbar
+      padding: 0px 25px
+      .menu-icon , .search-icon
+        margin-right: 0
+      .search-box
+        .go-icon
+          right: -5px
+      .content
+        .nav-links
+          .language-select
+            .fas
+              top: unset
+              transform: none
+              right: unset
 
   // welcome-content
   .welcome
@@ -1144,28 +1339,23 @@ img
           font-size: 16px
 
 @media screen and (max-width: $small)
-  // navbar
-  #show-menu
-    &:checked ~ .menu-icon
-      margin-left: -20px
-    &:checked ~ .search-icon
-      margin-right: -20px
   .navbar-scroll
     .search-icon , .menu-icon
       margin: 0!important
     .search-box
       .go-icon
-        right: -80px!important
+        right: -30px!important
         width: 40px
   .navbar
     height: 50px
     .menu-icon , .search-icon
+      margin-right: 0
       line-height: 50px
       font-size: 15px
       width: 40px
     .search-box
       .go-icon
-        right: -30px
+        right: -80px
         width: 40px
     .content
       .brand
@@ -1173,9 +1363,33 @@ img
       .nav-links
         top: 50px
         max-width: 250px
-        a
+        a , .language-select
           font-size: 16px
           line-height: 25px
+        #ThemeSwitch
+          width: 50px
+          height: 25px
+          top: 23.5px !important
+          &::before
+            width: 20px
+            height: 20px
+            line-height: 20px
+            font-size: 16px
+            left: 4px
+          &:checked
+            &::before
+              left: 26px
+        .language-select
+          .lang-choose
+            .lang-Farsi , .lang-English
+              font-size: 16px
+          .lang-icon
+            line-height: 25px
+          .fas
+            line-height: 25px
+            font-size: 16px
+            width: 25px
+            height: 25px
 
   // welcome-content
   .welcome

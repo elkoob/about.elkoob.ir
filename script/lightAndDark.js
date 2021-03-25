@@ -1,5 +1,5 @@
 var app = document.getElementById("app")
-var sw = document.getElementById("darkSwitch")
+var sw = document.getElementById("ThemeSwitch")
 
 sw.addEventListener("click", checkSwitch)
 

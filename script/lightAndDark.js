@@ -12,17 +12,24 @@ if (localStorage.getItem("darkMode") == "yes"){
 }
 
 if (localStorage.getItem("darkMode") == "no"){
-    app.setAttribute("class", "light")
+    if (!app.classList.contains("light")){
+        // app.setAttribute("class", "light")
+        app.classList.add("light")
+    }
 }
 
 
 function checkSwitch() {
     if (sw.checked == true){
         localStorage.setItem("darkMode", "yes")
-        app.setAttribute("class", "")
-        app.removeAttribute("class")
+        // app.setAttribute("class", "")
+        // app.removeAttribute("class")
+        app.classList.remove("light")
     }else{
         localStorage.setItem("darkMode", "no")
-        app.setAttribute("class", "light")
+        if (!app.classList.contains("light")){
+            // app.setAttribute("class", "light")
+            app.classList.add("light")
+        }
     }
 }

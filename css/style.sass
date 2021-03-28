@@ -240,7 +240,35 @@ body
           p
             color: $footer-header
 
-
+  .our-team
+    .content
+      .team
+        .owl-dots
+          .active
+            background: $btn-color-light !important
+            border-color: $btn-color-light !important
+          .owl-dot
+            border-color: $btn-color-light !important
+            &:hover
+              background: $btn-color-light !important
+        .person-profile
+          background: $btn-color-light
+          .zoom
+            img
+              box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.15)
+              border: 4px solid $special-text-light
+            .name , .job
+              transition: 0.3s
+              color: $background-light
+            .name
+              font-weight: 800
+          &:hover
+            .zoom
+              img
+                box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5)
+                border: none
+              .name
+                font-size: 20px
 
   .footer
     background: $footer-light
@@ -823,9 +851,12 @@ body
       box-shadow: 0 0 0 38em $special-text
     p
       color: $dark-background
+    .name
+      font-size: 18px
+      font-weight: 700
 
 .name
-  color: $text-color
+  color: $special-text
   margin: 2px 6px
   padding: 5px 10px
   border-radius: 2px

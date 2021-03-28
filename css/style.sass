@@ -20,7 +20,7 @@ $footer-header: #edf5e1
 $background-website-light: #fafafa
 $background-light: #1a2035
 $welcome-color-light: #c5c6c7
-// $background-light: #1f2833
+$background-little-light: #243048
 $text-color-light: #c5c6c7
 $special-text-light: #59a1ea
 $btn-color-light: #4595e0
@@ -173,10 +173,62 @@ body
       .links a
         &:hover
           border-color: $special-text-light
+
+  .our-services , .our-skills , .our-team
+    .content
+      .notice-exp
+        color: $special-text-light
+        &::before
+          background: $btn-color-light
+  .our-services
+    .content
+      .services
+        .services-exp
+          &::before
+            border-color: $special-text-light
+          div
+            &::before
+              border-color: $special-text-light
+            div
+              &::before
+                border-color: $special-text-light
+              div
+                &::before
+                  border-color: $special-text-light
+                .service-exp
+                  h1
+                    color: $background-light
+                  p
+                    color: $background-little-light
+                .service-logo
+                  border-color: $btn-color-light
+                  .fas
+                    background: $special-text-light
+                    color: #fafafa
+          &:hover
+            div
+              div
+                div
+                  .service-logo
+                    border-color: transparent
+                    .fas
+                      background: #fafafa
+                      color: $special-text-light
+                      border-color: $special-text-light
+
+  .our-skills
+    .content
+      .notice-exp
+        color: $footer-header
+
+
+
+
   .footer
     background: $footer-light
     .copyright
       background: $copyright-footer-light
+
 
 //navbar-dark
 .wrapper

@@ -16,7 +16,7 @@ if (localStorage.getItem("lang") == "" || !localStorage.getItem("lang")) {
 // }
 
 // app.setAttribute("class", localStorage.getItem("lang"))
-app.classList.add(localStorage.getItem("lang"))
+app.classList.add("lang-" + localStorage.getItem("lang"))
 
 for (let index = 0; index < langDiv.childElementCount; index++) {
     // const element = langDiv.children.item(index);
@@ -25,8 +25,8 @@ for (let index = 0; index < langDiv.childElementCount; index++) {
 
 function setLang(lang) {
     if (localStorage.getItem("lang") != lang){
-        app.classList.remove(localStorage.getItem("lang"))
+        app.classList.remove("lang-" + localStorage.getItem("lang"))
         localStorage.setItem("lang", lang)
-        app.classList.add(lang)
+        app.classList.add("lang-" + lang)
     }
 }

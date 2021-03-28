@@ -217,10 +217,28 @@ body
                       border-color: $special-text-light
 
   .our-skills
+    padding: 0
+    &::before
+      z-index: auto
     .content
+      padding-bottom: 20px
+      position: inherit
+      background: rgba(89, 161, 234, 0.2)
       .notice-exp
         color: $footer-header
-
+      .counters
+        .script-team , .web-team , .electronic-team , .graphic-team
+          background: rgba(21, 35, 48 , 0.95)
+          z-index: 2
+          .circular
+            .number
+              color: $btn-color
+            .inner
+              background: #fafafa
+          h1
+            color: $btn-color
+          p
+            color: $footer-header
 
 
 

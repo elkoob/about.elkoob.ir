@@ -167,8 +167,12 @@ body
       transition: 0.3s linear
       background-position: 0px
     .welcome-content
+      border-color: $special-text-light
       .notice
-        color: $special-text-light
+        color: $btn-color-light
+      .links a
+        &:hover
+          border-color: $special-text-light
   .footer
     background: $footer-light
     .copyright

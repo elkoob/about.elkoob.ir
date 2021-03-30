@@ -21,13 +21,13 @@ $background-website-light: #fafafa
 $background-light: #1a2035
 $welcome-color-light: #c5c6c7
 $background-little-light: #243048
-$text-color-light: #c5c6c7
-$special-text-light: #59a1ea
-$btn-color-light: #4595e0
+$text-color-light: #f6e5e5
+$special-text-light: #774181
+$btn-color-light: #352961
 $navbar-bg-light: #fff
 $scroll-bar-hover-light: #44a7a0
-$copyright-footer-light: #686e7c
-$footer-light:  #d9dde9
+$copyright-footer-light: #ccc0d3
+$footer-light:  #fafafa
 $footer-header-light: #edf5e1
 
 
@@ -109,59 +109,113 @@ body
   .wrapper
     .navbar
       .search-box
+        input
+          color: $text-color-light
+          &::placeholder
+            color: $text-color-light
         .go-icon
+          i
+            height: 30px
+            width: 30px
+            line-height: 30px
+            border-radius: 100%
+            color: $background-light
+            background: $text-color-light
+            &:hover
+              box-shadow: 0 0 15px 0 $special-text-light
+      .search-icon
+        color: $text-color-light
+        margin-right: 30px
+        i
+          transition: 0.3s
+          color: $text-color-light
+          height: 30px
+          width: 30px
+          line-height: 30px
+          border-radius: 100%
+          color: $background-light
+          background: $text-color-light
           &:hover
             color: $special-text-light
-      .search-icon
-        &:hover
-          color: $special-text-light
+            box-shadow: 0 0 15px 0 $special-text-light
       .content
         .brand
+          color: $text-color-light
           &:hover
             color: $text-color-light
-            border-color: $btn-color-light
+            border-color: $special-text-light
         .nav-links
+          #ThemeSwitch
+            background: $text-color-light
+            &::before
+              color: $text-color-light
           a
+            color: $text-color-light
             &:hover
-              background: $btn-color-light
-              color: $background-light
+              background: $special-text-light
+              color: $text-color-light
           .language-select
             .lang-choose
               border-color: $special-text-light
               background: $navbar-bg-light
               .lang-Farsi , .lang-English
-                color: $special-text-light
+                color: $text-color-light
                 border-color: $special-text-light
             .fas
               background: $text-color-light
             &:hover
               .fas
-                background: $btn-color-light
+                background: $text-color-light
+                color: $special-text-light
+                box-shadow: 0 0 15px 0 $special-text-light
   .navbar-scroll
     background: $navbar-bg-light
     .navbar
       .search-box
-        .go-icon , input
+        .go-icon
+          height: 30px
+          width: 30px
+          line-height: 30px
+          border-radius: 100%
           color: $background-light
+          background: $text-color-light
+          &:hover
+            box-shadow: 0 0 15px 0 $special-text-light
         input
+          color: $background-light
           &::placeholder
             color: $background-light
       .search-icon
+        height: 30px
+        width: 30px
+        line-height: 30px
+        border-radius: 100%
         color: $background-light
+        background: $text-color-light
+        margin-bottom: 0
+        margin-right: 150px
+        &:hover
+          box-shadow: 0 0 15px 0 $special-text-light
       .content
         .brand
           color: $background-light
           &:hover
-            color: $background-light
-            border-color: $btn-color-light
+            color: $btn-color-light
+            border-bottom: 3px solid $btn-color-light
+            border-radius: 10px
         .nav-links
           a
             color: $background-light
+            &:hover
+              background: $btn-color-light
           .language-select
             .fas
               background: $text-color-light
+            &:hover
+              .fas
+                box-shadow: 0 0 15px 0 $special-text-light
   .welcome
-    background: rgba(32, 34, 36, 0.5)
+    background: #77418152
     &::before
       display: block
       transition: 0.3s linear
@@ -169,10 +223,13 @@ body
     .welcome-content
       border-color: $special-text-light
       .notice
-        color: $btn-color-light
-      .links a
-        &:hover
-          border-color: $special-text-light
+        font-weight: 600
+        color: $text-color-light
+      .links
+        padding-left: 40px
+        a
+          &:hover
+            border-color: $special-text-light
 
   .our-services , .our-skills , .our-team
     .content
@@ -180,8 +237,12 @@ body
         color: $special-text-light
         &::before
           background: $btn-color-light
+        &::after
+          color: $text-color-light
   .our-services
     .content
+      box-shadow: 0 0 15px 0 $special-text-light
+      border-color: $special-text-light
       .services
         .services-exp
           &::before
@@ -223,24 +284,26 @@ body
     .content
       padding-bottom: 20px
       position: inherit
-      background: rgba(89, 161, 234, 0.2)
+      background: #77418133
       .notice-exp
         color: $footer-header
       .counters
         .script-team , .web-team , .electronic-team , .graphic-team
-          background: rgba(21, 35, 48 , 0.95)
+          background: #ffffffc9
           z-index: 2
           .circular
             .number
-              color: $btn-color
+              color: $special-text-light
             .inner
               background: #fafafa
           h1
-            color: $btn-color
+            color: $special-text-light
           p
-            color: $footer-header
+            color: $background-light
 
   .our-team
+    border-color: $special-text-light
+    box-shadow: 0 0 15px 0 $special-text-light
     .content
       .team
         .owl-dots
@@ -256,10 +319,10 @@ body
           .zoom
             img
               box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.15)
-              border: 4px solid $special-text-light
+              border: 4px solid $text-color-light
             .name , .job
               transition: 0.3s
-              color: $background-light
+              color: $text-color-light
             .name
               font-weight: 800
           &:hover
@@ -272,8 +335,43 @@ body
 
   .footer
     background: $footer-light
+    box-shadow: inset 0px 30px 40px -20px $special-text-light,inset 0px -11px 8px -10px #CCC
+    .footer-content
+      .footer-logo, .footer-contact, .footer-followus
+        h1
+          color: $special-text-light
+        ul , p , .ourteam-link a
+          color: $background-light
+        .ourteam-link
+          a
+            &::before , &::after
+              border-color: $background-light
+      .footer-contact
+        ul .contact-exp
+          &::before
+            border-color: $btn-color-light
+          .fas , .fab
+            color: $btn-color-light
+      .footer-followus
+        nav
+          .followus-exp
+            .fab , .fa-gap , .fa-aparat
+              border-color: $btn-color-light
+              color: $btn-color-light
+              background-color: transparent
+            .fa-aparat
+              background-image: url("../assets/imgs/aparatlogo-light.png")
+            .fa-gap
+              background-image: url("../assets/imgs/gaplogo-light.png")
     .copyright
       background: $copyright-footer-light
+      p
+        color: $background-light
+        a
+          color: $btn-color-light
+          &:hover
+            font-weight: 700
+            font-size: 18px
 
 
 //navbar-dark
@@ -623,9 +721,15 @@ body
 .our-services
   width: 100%
   height: max-content
+  display: block
   color: $text-color
-  margin-top: 70px
+  margin: 70px auto
   .content
+    margin: 0 20px
+    padding: 10px 0px 60px 0px
+    border-bottom: 5px solid
+    border-color: $btn-color
+    box-shadow: 0 0 15px 0 $btn-color
     .notice-exp
       margin-bottom: 80px
       &::after
@@ -817,6 +921,10 @@ body
   max-width: 100%
   margin: 70px 50px
   height: 100%
+  padding: 10px 10px 60px 10px
+  border-bottom: 5px solid
+  border-color: $btn-color
+  box-shadow: 0 0 15px 0 $btn-color
 
 .team
   text-align: center
@@ -1061,45 +1169,44 @@ img
               height: 45px!important
               border: none
             .fa-youtube
-                color: #ff4e45
-                border-color: #ff4e45
+                color: #ff4e45 !important
+                border-color: #ff4e45 !important
                 font-size: 27px
             .fa-telegram
-                color: #179cde
-                border-color: #179cde
+                color: #179cde !important
+                border-color: #179cde !important
                 font-size: 27px
             .fa-instagram
-                color: #FFC107
-                border-color: #FFC107
+                color: #FFC107 !important
+                border-color: #FFC107 !important
                 font-size: 27px
             .fa-github
                 color: #e3e2df
                 border-color: #e3e2df
                 font-size: 27px
             .fa-gitlab
-                color: #FF9800
-                border-color: #FF9800
+                color: #FF9800 !important
+                border-color: #FF9800 !important
                 font-size: 27px
             .fa-discord
-                color: #7289da
-                border-color: #7289da
+                color: #7289da !important
+                border-color: #7289da !important
                 font-size: 27px
             .fa-whatsapp
-                color: #4CAF50
-                border-color: #4CAF50
+                color: #4CAF50 !important
+                border-color: #4CAF50 !important
                 font-size: 27px
             .fa-aparat
                 color: #263238
                 font-size: 27px
-                background-image: url("https://imgs.elkoob.ir/about/aparatlogo-hover.png")
+                background-image: url("https://imgs.elkoob.ir/about/aparatlogo-hover.png") !important
                 border-color: #E91E63
                 background-color: $footer-header
             .fa-gap
                 color: #263238
                 font-size: 27px
-                background-image: url("https://imgs.elkoob.ir/about/gaplogo-hover.png")
+                background-image: url("https://imgs.elkoob.ir/about/gaplogo-hover.png") !important
                 border-color: #6e47c6
-                // background-color: $footer-header
           .fa-aparat , .fa-gap
             border-radius: 50px
             margin: 0 auto
@@ -1256,6 +1363,9 @@ img
   .light
     .wrapper
       .navbar
+        #show-search
+          &:checked ~ .search-icon
+            margin-bottom: 0
         #show-menu
           &:checked ~ .menu-icon
             color: $background-light
@@ -1265,13 +1375,28 @@ img
             .brand , .nav-links a
               color: $background-light
         .menu-icon , .search-icon
-          &:hover
+          &:hover i
+            transition: 0.3s
+            box-shadow: 0 0 15px 0 #774181
             color: $special-text-light !important
+        .menu-icon i
+          height: 30px
+          width: 30px
+          line-height: 30px
+          border-radius: 100%
+          color: $background-light
+          background: $text-color-light
+        .search-icon
+          margin-bottom: 0.5rem
+          margin-right: 0
         .content
           &::before
             background: #fafafa
           .nav-links
             background: #fafafa
+            a
+              &:hover
+                color: $text-color-light !important
             .language-select
               .lang-label
                 &:hover
@@ -1281,21 +1406,25 @@ img
               .lang-Farsi , .lang-English
                 border-radius: 0 5px 5px 0
                 &::after
-                  color: $special-text-light
+                  color: $text-color-light
               .fas
     .navbar-scroll
       .navbar
-        .menu-icon
-          color: $background-light
+        .search-icon
+          margin-right: 30px
         .search-box
           .go-icon
             color: $background-light
         .content
           .brand
           .nav-links
+            a
+              &:hover
+                background: $special-text-light
             .language-select
-
-
+    .welcome
+      .welcome-content
+        background: #77418185
 
 
 

@@ -55,6 +55,111 @@ body
   height: 100%
   background-color: $background-website
 
+// rtl (persain mode)
+.lang-fa
+  // navbar
+  .wrapper
+    direction: rtl
+    .navbar
+      #show-search:checked ~ .search-icon
+        margin-left: 0
+      .search-icon
+        margin: 0 0 0 30px
+      .menu-icon
+        width: auto
+      .search-box
+        input
+          padding-top: 15px
+        .go-icon
+          left: 0
+          right: unset
+      .content
+        .nav-links
+          margin: 0 80px 0 0
+          #ThemeSwitch
+            left: 70px
+            right: unset
+          .language-select
+            .lang-choose
+              left: 20px
+              right: unset
+              border-left: 5px solid
+              border-right: none
+              .lang-Farsi , .lang-English
+                &::after
+                  left: -100%
+                &:hover
+                  &::after
+                    left: 0
+            .lang-icon
+              .fas
+                left: 20px
+                right: unset
+
+  .navbar-scroll
+    .navbar
+      .search-icon
+        margin-left: 150px
+      .search-box
+        input
+          padding-top: 0px
+
+  // welcome
+  .welcome
+    direction: rtl
+    .welcome-content
+      text-align: right
+      .notice
+        text-align: right
+      .links
+        padding: 0 40px 0 0
+  // our-services
+  .our-services
+    direction: rtl
+    .content
+      .services
+        .services-exp
+          div
+            div
+              div
+                .service-logo
+                  border-right: 5px solid #45a29e
+                  border-left: none
+                .service-exp
+                  h1 , p
+                    text-align: right
+  // footer
+  .footer
+    .footer-content
+      direction: rtl
+      .footer-logo , .footer-contact , .footer-followus
+        h1 , p , ul
+          text-align: right
+          .contact-exp
+            &::before
+              right: -100%
+            &:hover
+              &::before
+                right: 0
+            i
+              padding: 0 0 0 15px
+        .ourteam-link
+          a
+            &::before
+              right: -350px
+            &:hover
+              &::before
+                right: 0
+              &::after
+                left: -350px
+
+    .footer-content
+      .footer-followus
+          nav
+            text-align: right
+            .followus-exp
+              margin: 10px 0 0 15px
+
 // navbar
 
 #ThemeSwitch
@@ -215,7 +320,7 @@ body
               .fas
                 box-shadow: 0 0 15px 0 $special-text-light
   .welcome
-    background: #77418152
+    background: #7741812e
     &::before
       display: block
       transition: 0.3s linear
@@ -987,7 +1092,7 @@ img
 
 .job
   color: $text-color
-  margin: 2px 6px
+  // margin: 2px 6px
   padding: 5px 10px
   border-radius: 2px
   transition: 0.3s
@@ -1293,6 +1398,20 @@ img
 
 // responsive code
 @media screen and (max-width: $big)
+
+  //rtl (persain mode)
+  // navbar
+  .lang-fa
+    .footer
+      .footer-content
+        .footer-followus
+          h1
+            text-align: center
+          nav
+            text-align: center
+            .followus-exp
+              margin: 10px 15px 0 0
+
   // navbar
   .navbar-scroll
     .navbar
@@ -1359,6 +1478,70 @@ img
 
 @media screen and (max-width: $medium)
 
+  //rtl (persain mode)
+  // navbar
+  .lang-fa
+    .wrapper
+      .navbar
+        #show-menu
+          &:checked ~ .content .nav-links
+            left: unset
+            right: 0
+        .search-icon
+          margin: 0
+          margin-right: 0 !important
+        .menu-icon
+          width: 70px
+          margin-right: 0
+        .search-box
+          input
+            padding-top: 0
+            margin: 0 25px 0 0
+          .go-icon
+            left: -50px
+            right: unset
+        .content
+          &::before
+            transform-origin: right
+          .nav-links
+            left: unset
+            right: -100%
+            text-align: right
+            margin: 0
+            #ThemeSwitch
+              right: unset !important
+              left: 35px
+            .language-select
+              .lang-choose
+                border-right: 5px solid
+                border-left: none
+                .lang-Farsi , .lang-English
+                  border-radius: 5px 0 0 5px
+                  &::after
+                    left: 100%
+                  &:hover
+                    &::after
+                      left: 0
+    .navbar-scroll
+      .navbar
+        .search-icon
+          width: auto
+          margin-bottom: 0.5rem
+        .menu-icon
+          width: auto
+        .search-box
+          .go-icon
+            left: -5px
+
+    // welcome
+    .welcome
+      .welcome-content
+        text-align: center
+        .links
+          padding: 0
+        .notice
+          text-align: center
+
   // light-theme
   .light
     .wrapper
@@ -1424,9 +1607,10 @@ img
             .language-select
     .welcome
       .welcome-content
+        text-align: center
         background: #77418185
         .links
-          padding-left: 0
+          padding: 0
 
 
 
@@ -1677,6 +1861,28 @@ img
           font-size: 16px
 
 @media screen and (max-width: $small)
+
+  //rtl (persain mode)
+  // welcome
+  //rtl (persain mode)
+  // welcome
+  .lang-fa
+    .wrapper
+      .navbar
+        .menu-icon
+          width: 40px
+        .search-box
+          .go-icon
+            left: -80px
+    .navbar-scroll
+      .navbar
+        .menu-icon
+          width: auto
+        .search-box
+          .go-icon
+            left: -30px
+            right: unset !important
+
   .navbar-scroll
     .search-icon , .menu-icon
       margin: 0!important

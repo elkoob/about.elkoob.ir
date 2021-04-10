@@ -8,7 +8,6 @@ $(window).scroll(function(){
     }
 });
 
-
 //scroll for starting counting of ourskills
 
 let options = {
@@ -36,7 +35,6 @@ $(".graphic-team .circular").circleProgress({
 $(".electronic-team .circular").circleProgress({
   value: 0.90,
 });
-
 
 // owl carousel script
 $('.carousel').owlCarousel({

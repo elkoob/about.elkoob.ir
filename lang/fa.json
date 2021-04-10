@@ -1,44 +1,44 @@
 {
-    "title":"تیم الکترونیک و وب الکوب"
+    "title":"تیم الکترونیک و وب الکوب",
     "brand":"تیم الکوب",
-    "welcome":"به الکوب خوش آمدید"
-    "nav-btn-services":"سرویس ها"
-    "nav-btn-skills":"مهارت ها"
-    "nav-btn-team":"تیم"
-    "our-services-notice":"سرویس های ما"
-    "first-service-notice":"پشتیبانی سیستم"
-    "first-service-text":"لورم اپیلوسیون متنی جهت تست و آزمایش است"
-    "secend-service-notice":"پشتیبانی سیستم"
-    "secend-service-text":"لورم اپیلوسیون متنی جهت تست و آزمایش است"
-    "third-service-notice":"پشتیبانی سیستم"
-    "third-service-text":"لورم اپیلوسیون متنی جهت تست و آزمایش است"
-    "forth-service-notice":"پشتیبانی سیستم"
-    "forth-service-text":"لورم اپیلوسیون متنی جهت تست و آزمایش است"
-    "our-skills-notice":"مهارت های ما"
-    "script-notice":"مهارت تیم اسکریپت"
-    "script-text":"این فقط یک جمله است :)"
-    "electronic-notice":"مهارت تیم الکترونیک"
-    "electronic-text":"این فقط یک جمله است :)"
-    "graphic-notice":"مهارت تیم گرافیک"
-    "graphic-text":"این فقط یک جمله است :)"
-    "web-notice":"مهارت تیم وب"
-    "web-text":"این فقط یک جمله است :)"
-    "our-team-notice":"تیم ما"
-    "kheiry-name":"امیر عباس خیری"
-    "kheiry-text":"سرپرست تیم، الکترونیک تکنسین، توسعه  دهنده بک اند"
-    "deldadeh-name":"مهدی دلداده"
-    "deldadeh-text":"توسعه دهنده فرانت اند، الکترونیک تکنسین، طراح UI/UX"
-    "mohseni-name":"علیرضا محسنی"
-    "mohseni-text":"طراح پوستر، طراح لوگو، طراح 3بعدی"
-    "rafi-name":"محمد حسین رفیع"
-    "rafi-text":"الکترونیک تکنسین، توسعه دهنده بک اند، توسعه دهنده ویندوز"
-    "najafi-name":"محمد مهدی نجفی"
-    "najafi-text":"متخصص سخت افزار کامپیوتر، الکترونیک تکنسین"
-    "logo-text":"لورم اپیلوسیون یک تکست آزمایشی صرفا جهت تست و کاملا برای استفاده در متن است"
-    "address-text":"قم، کوچه یک :)"
-    "phone-text":"تلفن: +989104647490"
-    "email-text":"ایمیل: info@elkoob.ir"
-    "skype-text":"اسکایپ: یه چیزی"
+    "welcome":"به الکوب خوش آمدید",
+    "nav-btn-services":"سرویس ها",
+    "nav-btn-skills":"مهارت ها",
+    "nav-btn-team":"تیم",
+    "our-services-notice":"سرویس های ما",
+    "first-service-notice":"پشتیبانی سیستم",
+    "first-service-text":"لورم اپیلوسیون متنی جهت تست و آزمایش است",
+    "secend-service-notice":"پشتیبانی سیستم",
+    "secend-service-text":"لورم اپیلوسیون متنی جهت تست و آزمایش است",
+    "third-service-notice":"پشتیبانی سیستم",
+    "third-service-text":"لورم اپیلوسیون متنی جهت تست و آزمایش است",
+    "forth-service-notice":"پشتیبانی سیستم",
+    "forth-service-text":"لورم اپیلوسیون متنی جهت تست و آزمایش است",
+    "our-skills-notice":"مهارت های ما",
+    "script-notice":"مهارت تیم اسکریپت",
+    "script-text":"این فقط یک جمله است :)",
+    "electronic-notice":"مهارت تیم الکترونیک",
+    "electronic-text":"این فقط یک جمله است :)",
+    "graphic-notice":"مهارت تیم گرافیک",
+    "graphic-text":"این فقط یک جمله است :)",
+    "web-notice":"مهارت تیم وب",
+    "web-text":"این فقط یک جمله است :)",
+    "our-team-notice":"تیم ما",
+    "kheiry-name":"امیر عباس خیری",
+    "kheiry-text":"سرپرست تیم، الکترونیک تکنسین، توسعه  دهنده بک اند",
+    "deldadeh-name":"مهدی دلداده",
+    "deldadeh-text":"توسعه دهنده فرانت اند، الکترونیک تکنسین، طراح UI/UX",
+    "mohseni-name":"علیرضا محسنی",
+    "mohseni-text":"طراح پوستر، طراح لوگو، طراح 3بعدی",
+    "rafi-name":"محمد حسین رفیع",
+    "rafi-text":"الکترونیک تکنسین، توسعه دهنده بک اند، توسعه دهنده ویندوز",
+    "najafi-name":"محمد مهدی نجفی",
+    "najafi-text":"متخصص سخت افزار کامپیوتر، الکترونیک تکنسین",
+    "logo-text":"لورم اپیلوسیون یک تکست آزمایشی صرفا جهت تست و کاملا برای استفاده در متن است",
+    "address-text":"قم، کوچه یک :)",
+    "phone-text":"تلفن: +989104647490",
+    "email-text":"ایمیل: info@elkoob.ir",
+    "skype-text":"اسکایپ: یه چیزی",
     "copyright-text":"تمام حقوق برای الکوب محفوظ است | "
 
 }

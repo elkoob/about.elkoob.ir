@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <link rel="stylesheet" href="css/style.min.css">
 
-    <title>Elkoob Electronic & Web Team</title>
+    <title id="title">Elkoob Electronic & Web Team</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M115G9CH6J"></script>
@@ -44,9 +44,9 @@
               </div>
             </div>
             <input type="checkbox" id="ThemeSwitch">
-            <a href="#">Services</a>
-            <a href="#">Skills</a>
-            <a href="#">Team</a>
+            <a id="nav-btn-services" href="#">Services</a>
+            <a id="nav-btn-skills" href="#">Skills</a>
+            <a id="nav-btn-team" href="#">Team</a>
           </div>
         </div>
         <label for="show-search" class="search-icon"><i class="fa fa-search"></i></label>
@@ -72,7 +72,7 @@
       <!-- our services -->
       <section class="our-services">
         <div class="content">
-          <p class="notice-exp">Our Services</p>
+          <p class="notice-exp" id="our-services-notice">Our Services</p>
           <div class="services">
             <div class="services-exp">
               <div>
@@ -80,8 +80,8 @@
                   <div>
                     <span class="service-logo"><i class="fas fa-laptop"></i></span>
                     <span class="service-exp">
-                      <h1>System Supporting</h1>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <h1 id="first-service-notice">System Supporting</h1>
+                      <p id="first-service-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </span>
                   </div>
                 </div>
@@ -94,8 +94,8 @@
                   <div>
                     <span class="service-logo"><i class="fas fa-laptop"></i></span>
                     <span class="service-exp">
-                      <h1>System Supporting</h1>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <h1 id="secend-service-notice">System Supporting</h1>
+                      <p id="secend-service-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </span>
                   </div>
                 </div>
@@ -108,8 +108,8 @@
                   <div>
                     <span class="service-logo"><i class="fas fa-laptop"></i></span>
                     <span class="service-exp">
-                      <h1>System Supporting</h1>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <h1 id="third-service-notice">System Supporting</h1>
+                      <p id="third-service-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </span>
                   </div>
                 </div>
@@ -122,8 +122,8 @@
                   <div>
                     <span class="service-logo"><i class="fas fa-laptop"></i></span>
                     <span class="service-exp">
-                      <h1>System Supporting</h1>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <h1 id="forth-service-notice">System Supporting</h1>
+                      <p id="forth-service-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </span>
                   </div>
                 </div>
@@ -137,7 +137,7 @@
       <!-- ourskills section -->
       <section class="our-skills">
         <div class="content">
-          <p class="notice-exp">Our Skills</p>
+          <p class="notice-exp" id="our-skills-notice">Our Skills</p>
           <div class="counters">
 
             <div class="script-team">
@@ -145,8 +145,8 @@
                 <div class="number number1"></div>
                 <div class="inner"></div>
               </div>
-              <h1>Script Team Skill</h1>
-              <p>this is just a sentence :)</p>
+              <h1 id="script-notice">Script Team Skill</h1>
+              <p id="script-text">this is just a sentence :)</p>
             </div>
 
             <div class="electronic-team">
@@ -154,8 +154,8 @@
                 <div class="number number2"></div>
                 <div class="inner"></div>
               </div>
-              <h1>Electronic Team Skill</h1>
-              <p>this is just a sentence :)</p>
+              <h1 id="electronic-notice">Electronic Team Skill</h1>
+              <p id="electronic-text">this is just a sentence :)</p>
             </div>
 
             <div class="graphic-team">
@@ -163,8 +163,8 @@
                 <div class="number number3"></div>
                 <div class="inner"></div>
               </div>
-              <h1>Graphic Team Skill</h1>
-              <p>this is just a sentence :)</p>
+              <h1 id="graphic-notice">Graphic Team Skill</h1>
+              <p id="graphic-text">this is just a sentence :)</p>
             </div>
 
             <div class="web-team">
@@ -172,8 +172,8 @@
                 <div class="number number4"></div>
                 <div class="inner"></div>
               </div>
-              <h1>Web Team Skill</h1>
-              <p>this is just a sentence :)</p>
+              <h1 id="web-notice">Web Team Skill</h1>
+              <p id="web-text">this is just a sentence :)</p>
             </div>
 
           </div>
@@ -183,41 +183,41 @@
       <!-- ourteam section -->
       <section class="our-team">
         <div class="content">
-          <p class="notice-exp">Our Team</p>
+          <p class="notice-exp" id="our-team-notice">Our Team</p>
           <div class="team carousel owl-carousel">
             <a class="person-profile" href="#">
               <div class="zoom">
                 <img src="https://imgs.elkoob.ir/about/amir.jpg" alt="...">
-                <p class="name">Amir abass Kheiry</p>
-                <p class="job">Team header, Electronic man, Backend developer</p>
+                <p class="name" id="kheiry-name">Amir abass Kheiry</p>
+                <p class="job" id="kheiry-text">Team header, Electronic man, Backend developer</p>
               </div>
             </a>
             <a class="person-profile" href="#">
               <div class="zoom">
                 <img src="https://imgs.elkoob.ir/about/Ledrif.jpg" alt="...">
-                <p class="name">Mahdi Deldadeh</p>
-                <p class="job">Frontend developer, Electronic man , Youtuber of Team</p>
+                <p class="name" id="deldadeh-name">Mahdi Deldadeh</p>
+                <p class="job" id="deldadeh-text">Frontend developer, Electronic man , UI/UX Designer</p>
               </div>
             </a>
             <a class="person-profile" href="#">
               <div class="zoom">
                 <img src="https://imgs.elkoob.ir/about/alireza.jpg" alt="...">
-                <p class="name">Alireza Mohseni</p>
-                <p class="job"> Poster designer, Logo designer, 3D designer</p>
+                <p class="name" id="mohseni-name">Alireza Mohseni</p>
+                <p class="job" id="mohseni-text"> Poster designer, Logo designer, 3D designer</p>
               </div>
             </a>
             <a class="person-profile" href="#">
               <div class="zoom">
                 <img src="https://imgs.elkoob.ir/about/team-made.jpg" alt="...">
-                <p class="name">Mohammad Hossein Rafi</p>
-                <p class="job">Electronic man, Backend developer, Windows developer</p>
+                <p class="name" id="rafi-name">Mohammad Hossein Rafi</p>
+                <p class="job" id="rafi-text">Electronic man, Backend developer, Windows developer</p>
               </div>
             </a>
             <a class="person-profile" href="#">
               <div class="zoom">
                 <img src="https://imgs.elkoob.ir/about/team-made.jpg" alt="...">
-                <p class="name">Mohammad Mahdi Najafi</p>
-                <p class="job"> Computer Hardware, Electronic man</p>
+                <p class="name" id="najafi-name">Mohammad Mahdi Najafi</p>
+                <p class="job" id="najafi-text"> Computer Hardware specialist, Electronic man</p>
               </div>
             </a>
           </div>
@@ -228,22 +228,22 @@
       <div class="footer-content">
         <div class="footer-logo">
           <h1>Logo</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p id="logo-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <div class="ourteam-link">
-            <a href="#">Our Team</a>
+            <a id="our-team-notice" href="#">Our Team</a>
           </div>
         </div>
         <div class="footer-contact">
-          <h1>Contact</h1>
+          <h1 id="contact-notice">Contact</h1>
           <ul>
-            <li class="contact-exp"><i class="fas fa-map-marker-alt"></i> Qom, koche 1 :)</li>
-            <li class="contact-exp"><i class="fas fa-phone-alt"></i> Phone: +989123456789</li>
-            <li class="contact-exp"><i class="fas fa-envelope"></i> Email: info@elkoob.ir</li>
-            <li class="contact-exp"><i class="fab fa-skype"></i> Skype: somthing</li>
+            <li class="contact-exp" id="address-text"><i class="fas fa-map-marker-alt"></i> Qom, koche 1 :)</li>
+            <li class="contact-exp" id="phone-text"><i class="fas fa-phone-alt"></i> Phone: +989123456789</li>
+            <li class="contact-exp" id="email-text"><i class="fas fa-envelope"></i> Email: info@elkoob.ir</li>
+            <li class="contact-exp" id="skype-text"><i class="fab fa-skype"></i> Skype: somthing</li>
           </ul>
         </div>
         <div class="footer-followus">
-          <h1>Follow Us</h1>
+          <h1 id="followus-notice">Follow Us</h1>
           <nav>
             <a href="#" class="followus-exp"><p class="fa-aparat"></p></a>
             <a href="#" class="followus-exp"><i class="fab fa-instagram"></i></a>
@@ -258,7 +258,7 @@
         </div>
       </div>
       <div class="copyright">
-        <p> Copyright © 2020 | Theme by <a href="https://www.about.elkoob.ir">Elkoob Team</a> | All rights reserved </p>
+        <p id="copyright-text"> Copyright © 2020 | Theme by <a id="brand" href="https://www.about.elkoob.ir">Elkoob Team</a> | All rights reserved </p>
       </div>
     </footer>
   </div>

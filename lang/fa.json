@@ -1,10 +1,10 @@
 {
     "title":"تیم الکترونیک و وب الکوب",
     "brand":"تیم الکوب",
-    "welcome":"به الکوب خوش آمدید",
     "nav-btn-services":"سرویس ها",
     "nav-btn-skills":"مهارت ها",
     "nav-btn-team":"تیم",
+    "welcome":"به الکوب خوش آمدید",
     "our-services-notice":"سرویس های ما",
     "first-service-notice":"پشتیبانی سیستم",
     "first-service-text":"لورم اپیلوسیون متنی جهت تست و آزمایش است",
@@ -36,9 +36,12 @@
     "najafi-text":"متخصص سخت افزار کامپیوتر، الکترونیک تکنسین",
     "logo-text":"لورم اپیلوسیون یک تکست آزمایشی صرفا جهت تست و کاملا برای استفاده در متن است",
     "address-text":"قم، کوچه یک :)",
-    "phone-text":"تلفن: +989104647490",
+    "phone-text":"+تلفن: 989104647490",
+    "our-team-notice":"تیم ما",
+    "contact-notice":"ارتباط",
+    "followus-notice":"ما را دنبال کنید",
     "email-text":"ایمیل: info@elkoob.ir",
     "skype-text":"اسکایپ: یه چیزی",
-    "copyright-text":"تمام حقوق برای الکوب محفوظ است | "
+    "copyright-text":"تمام حقوق برای الکوب محفوظ است | <a href='https://www.about.elkoob.ir'>تیم الکوب</a> طراحی قالب از"
 
 }

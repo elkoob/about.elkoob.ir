@@ -117,6 +117,9 @@ body
   .our-services
     direction: rtl
     .content
+      .notice-exp
+        &::after
+          content: 'چه کمکی از ما ساختس؟'
       .services
         .services-exp
           div
@@ -128,6 +131,18 @@ body
                 .service-exp
                   h1 , p
                     text-align: right
+  .our-skills
+    .content
+      .notice-exp
+        &::after
+          content: 'بخش مهارت ها'
+  .our-team
+    .content
+      .notice-exp
+        &::after
+          content: 'ما که هستیم؟'
+
+
   // footer
   .footer
     .footer-content
@@ -159,6 +174,26 @@ body
             text-align: right
             .followus-exp
               margin: 10px 0 0 15px
+
+//lrt mode
+
+.lang-en
+  .our-services
+    .content
+      .notice-exp
+        &::after
+          content: 'How we can help'
+  .our-skills
+    .content
+      .notice-exp
+        &::after
+          content: 'Skills Section'
+  .our-team
+    .content
+      .notice-exp
+        &::after
+          content: 'Who we are'
+
 
 // navbar
 

@@ -11,29 +11,26 @@ $(window).scroll(function(){
 //scroll for starting counting of ourskills
 
 let options = {
-  startAngle: -1.6,
-  size: 100,
-  value: 1,
+  startAngle: -1.55,
+  size: 150,
+  value: 0.85,
   fill: {color: "#45a29e"}
 }
-$(".circular").circleProgress(options).on('circle-animation-progress', function(event, progress, stepValue){
-  $(this).find(".number").text(String(stepValue.toFixed(2).substr(2)) + "%");
+
+$(".circle .bar").circleProgress(options).on('circle-animation-progress' , function(event , progress, stepValue) {
+  $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
 });
 
-$(".script-team .circular").circleProgress({
-  value: 0.99,
+$(".web .bar").circleProgress({
+  value: 0.70,
 });
 
-$(".web-team .circular").circleProgress({
-  value: 0.30,
-});
-
-$(".graphic-team .circular").circleProgress({
-  value: 0.80,
-});
-
-$(".electronic-team .circular").circleProgress({
+$(".script .bar").circleProgress({
   value: 0.90,
+});
+
+$(".graphic .bar").circleProgress({
+  value: 0.80,
 });
 
 // owl carousel script
@@ -56,4 +53,25 @@ $('.carousel').owlCarousel({
             nav: false
         }
     }
+});
+
+// preloading
+$(document).ready(function() {
+
+  // Fakes the loading setting a timeout
+    setTimeout(function() {
+        $('body').addClass('loaded');
+    }, 3500);
+
+});
+
+//parallax effect
+const parallax = document.getElementById("parallax");
+
+window.addEventListener("scroll" , function () {
+  var offset = window.pageYOffset;
+  const number = -0.2;
+  var inset = offset * number;
+  parallax.style.backgroundPositionY = inset + "px";
+
 });

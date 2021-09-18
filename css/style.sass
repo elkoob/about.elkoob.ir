@@ -5,106 +5,200 @@
 @tailwind utilities
 
 // colors var
-$background-website: #191919
-$black-background: #272727
-$dark-background: #1f2833
-$text-color: #c5c6c7
-$special-text: #66fcf1
-$btn-color: #45a29e
-$navbar-bg: #222
+$background: #191919
+$dark-black: #272727
+$dark-black-blue: #1f2833
+$gray: #c5c6c7
+$light-blue: #66fcf1
+$dark-blue: #45a29e
+$dark-black-thisislighter: #222
 $scroll-bar-hover: #44a7a0
-$copyright-footer: #1a1a1d
-$footer: #202224
-$footer-header: #edf5e1
+$black-lighter: #1a1a1d
+$dark-black-blue-almostsame: #202224
+$light-green: #edf5e1
 // light colors
-$background-website-light: #fafafa
-$background-light: #1a2035
-$welcome-color-light: #c5c6c7
-$background-little-light: #243048
-$text-color-light: #f6e5e5
-$special-text-light: #774181
-$btn-color-light: #352961
-$navbar-bg-light: #fff
-$scroll-bar-hover-light: #44a7a0
-$copyright-footer-light: #ccc0d3
-$footer-light:  #fafafa
-$footer-header-light: #edf5e1
-
+$white: #fff
 
 // beackpoints var
-$big: 1280px
-$medium: 900px
-$small: 480px
-
-
-//frame works (animations)
-@keyframes left
-  100%
-    transform: rotate(180deg)
-
-@keyframes right
-  100%
-    transform: rotate(180deg)
-
+$ex-larg: 1367px
+$larg: 1367px
+$medium: 768px
+$small: 600px
 
 
 //styles
 html , body
-  scroll-behavior: smooth !important
-
-body
   width: 100%
   height: 100%
-  background-color: $background-website
+  scroll-behavior: smooth !important
+  margin: 0
+  padding: 0
+
+body
+  background-color: $background
+
+//css reset
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+//fonts
+@font-face
+  font-family: 'Roboto'
+  font-style: normal
+  font-weight: 400
+  font-display: swap
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2')
+
+@font-face
+  font-family: Sahel
+  src: url('../assets/fonts/Sahel.eot')
+  src: url('../assets/fonts/Sahel.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/Sahel.woff2') format('woff2'), url('../assets/fonts/Sahel.woff') format('woff'), url('../assets/fonts/Sahel.ttf') format('truetype')
+  font-weight: normal
+
+@font-face
+  font-family: "Cinema"
+  src: url("../assets/fonts/Cinema Full.ttf")
+
+
+//preloading
+/* The Loader */
+
+#loader-wrapper
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 100000
+  overflow: hidden
+  // .no-js &
+  //   display: none
+
+#loader
+  display: block
+  position: relative
+  left: 50%
+  top: 50%
+  width: 150px
+  height: 150px
+  margin: -75px 0 0 -75px
+  border-radius: 50%
+  border: 3px solid transparent
+  border-top-color: #16a085
+  animation: spin 1.7s linear infinite
+  z-index: 11
+  &::before
+    content: ""
+    position: absolute
+    top: 5px
+    left: 5px
+    right: 5px
+    bottom: 5px
+    border-radius: 50%
+    border: 3px solid transparent
+    border-top-color: #e74c3c
+    animation: spin-reverse .6s linear infinite
+
+  &::after
+    content: ""
+    position: absolute
+    top: 15px
+    left: 15px
+    right: 15px
+    bottom: 15px
+    border-radius: 50%
+    border: 3px solid transparent
+    border-top-color: #f9c922
+    animation: spin 1s linear infinite
+
+// animations
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
+
+@keyframes spin-reverse
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(-360deg)
+
+#loader-wrapper .loader-section
+  position: fixed
+  top: 0
+  width: 51%
+  height: 100%
+  background: #191919
+  z-index: 10
+
+#loader-wrapper .loader-section.section-left
+  left: 0
+
+#loader-wrapper .loader-section.section-right
+  right: 0
+
+/* Loaded styles */
+
+.loaded #loader-wrapper .loader-section.section-left
+  transform: translateX(-100%)
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+
+.loaded #loader-wrapper .loader-section.section-right
+  transform: translateX(100%)
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+
+.loaded #loader
+  opacity: 0
+  transition: all 0.3s ease-out
+
+.loaded #loader-wrapper
+  visibility: hidden
+  transform: translateY(-100%)
+  transition: all 0.3s 1s ease-out
+
 
 // rtl (persain mode)
 .lang-fa
   // navbar
+  font-family: Sahel
   .wrapper
     direction: rtl
     .navbar
-      #show-search:checked ~ .search-icon
-        margin-left: 0
-      .search-icon
-        margin: 0 0 0 30px
       .menu-icon
         width: auto
-      .search-box
-        input
-          padding-top: 15px
-        .go-icon
-          left: 0
-          right: unset
       .content
         .nav-links
           margin: 0 80px 0 0
           #ThemeSwitch
-            left: 70px
+            left: 100px
             right: unset
           .language-select
             .lang-choose
-              left: 20px
+              left: 50px
               right: unset
-              border-left: 5px solid
+              border-left: 5px solid #66fcf1
               border-right: none
               .lang-Farsi , .lang-English
-                &::after
-                  left: -100%
                 &:hover
-                  &::after
-                    left: 0
+                  margin: 5px -10px 5px 0
             .lang-icon
               .fas
-                left: 20px
+                left: 50px
                 right: unset
 
   .navbar-scroll
+    padding: 10px 50px 10px 0
     .navbar
-      .search-icon
-        margin-left: 150px
-      .search-box
-        input
-          padding-top: 0px
+      .content
+        .nav-links
+          .language-select
+            .lang-choose
+              top: 59px
 
   // welcome
   .welcome
@@ -115,6 +209,7 @@ body
         text-align: right
       .links
         padding: 0 40px 0 0
+
   // our-services
   .our-services
     direction: rtl
@@ -130,19 +225,23 @@ body
             div
               div
                 .service-logo
-                  border-right: 5px solid #45a29e
-                  border-left: none
+                  #first-service-notice
+                    padding-right: 10px
                 .service-exp
+                  padding-right: 70px
+                  padding-left: 0
                   h1 , p
                     text-align: right
+
   // our-skills
   .our-skills
     .content
       .notice-exp
         &::after
           content: 'بخش مهارت ها'
-  // our-skills
-  .our-team
+
+  // our-teams
+  .our-teams
     .content
       .notice-exp
         &::after
@@ -184,6 +283,7 @@ body
 //lrt (English mode)
 
 .lang-en
+  font-family: "Roboto" , sans-serif
   .our-services
     .content
       .notice-exp
@@ -194,7 +294,7 @@ body
       .notice-exp
         &::after
           content: 'Skills Section'
-  .our-team
+  .our-teams
     .content
       .notice-exp
         &::after
@@ -204,16 +304,18 @@ body
 // navbar
 
 #ThemeSwitch
-  appearance: none
-  -webkit-appearance: none
   width: 60px
   height: 30px
+  appearance: none
   display: block
-  cursor: pointer
   position: absolute
-  bottom: 8%
-  right: 70px
-  background: $text-color
+  bottom: 0
+  top: 0
+  right: 100px
+  margin: auto
+  -webkit-appearance: none
+  cursor: pointer
+  background: $gray
   border-radius: 50px
   outline: none
   transition: 0.3s linear
@@ -225,19 +327,19 @@ body
     height: 25px
     text-align: center
     border-radius: 100%
-    background: $dark-background
-    color: $text-color
+    background: $dark-black-blue
+    color: $gray
     position: absolute
     transition: 0.3s linear
     top: 2.5px
     left: 4px
   &:checked
-    background: $btn-color
+    background: $dark-blue
     &::before
       content: '\f186' !important
-      color: $copyright-footer
+      color: $black-lighter
       font-family: "Font Awesome 5 Free"
-      background: $text-color
+      background: $gray
       left: 31px
 
 // light
@@ -251,167 +353,111 @@ body
     top: 0px
     left: 0px
     z-index: -9999
-    background: $background-website-light
+    background: $white
   .wrapper
     .navbar
-      .search-box
-        input
-          color: $text-color-light
-          &::placeholder
-            color: $text-color-light
-        .go-icon
-          i
-            height: 30px
-            width: 30px
-            line-height: 30px
-            border-radius: 100%
-            color: $background-light
-            background: $text-color-light
-            &:hover
-              box-shadow: 0 0 15px 0 $special-text-light
-      .search-icon
-        color: $text-color-light
-        margin-right: 30px
-        i
-          transition: 0.3s
-          color: $text-color-light
-          height: 30px
-          width: 30px
-          line-height: 30px
-          border-radius: 100%
-          color: $background-light
-          background: $text-color-light
-          &:hover
-            color: $special-text-light
-            box-shadow: 0 0 15px 0 $special-text-light
       .content
         .brand
-          color: $text-color-light
+          color: $gray
           &:hover
-            color: $text-color-light
-            border-color: $special-text-light
+            color: $white
+            border-color: $light-blue
         .nav-links
           #ThemeSwitch
-            background: $text-color-light
+            background: $gray
             &::before
-              color: $text-color-light
+              color: $gray
           a
-            color: $text-color-light
+            color: $gray
             &:hover
-              background: $special-text-light
-              color: $text-color-light
+              background: $light-blue
+              color: $white
           .language-select
             .lang-choose
-              border-color: $special-text-light
-              background: $navbar-bg-light
+              border-color: $light-blue !important
+              background: $white
               .lang-Farsi , .lang-English
-                color: $text-color-light
-                border-color: $special-text-light
+                color: $dark-black
+                border-color: $light-blue
+                &:hover
+                  color: $white
             .fas
-              background: $text-color-light
+              background: $gray
             &:hover
               .fas
-                background: $text-color-light
-                color: $special-text-light
-                box-shadow: 0 0 15px 0 $special-text-light
+                background: $dark-black
+                color: $light-blue
+                box-shadow: 0 0 15px 0 $light-blue
   .navbar-scroll
-    background: $navbar-bg-light
+    background: $white
     .navbar
-      .search-box
-        .go-icon
-          height: 30px
-          width: 30px
-          line-height: 30px
-          border-radius: 100%
-          color: $background-light
-          background: $text-color-light
-          &:hover
-            box-shadow: 0 0 15px 0 $special-text-light
-        input
-          color: $background-light
-          &::placeholder
-            color: $background-light
-      .search-icon
-        height: 30px
-        width: 30px
-        line-height: 30px
-        border-radius: 100%
-        color: $background-light
-        background: $text-color-light
-        margin-bottom: 0
-        margin-right: 150px
-        &:hover
-          box-shadow: 0 0 15px 0 $special-text-light
       .content
         .brand
-          color: $background-light
+          color: $dark-black
           &:hover
-            color: $btn-color-light
-            border-bottom: 3px solid $btn-color-light
+            color: $dark-blue
+            border-bottom: 3px solid $dark-blue
             border-radius: 10px
         .nav-links
           a
-            color: $background-light
+            color: $dark-black
             &:hover
-              background: $btn-color-light
+              background: $dark-blue
           .language-select
             .fas
-              background: $text-color-light
+              background: $gray
             &:hover
               .fas
-                box-shadow: 0 0 15px 0 $special-text-light
+                box-shadow: 0 0 15px 0 $light-blue
   .welcome
-    background: #7741812e
-    &::before
-      display: block
-      transition: 0.3s linear
-      background-position: 0px
     .welcome-content
-      border-color: $special-text-light
+      border-color: $light-blue
       .notice
         font-weight: 600
-        color: $text-color-light
+        color: $gray
       .links
         padding-left: 40px
         a
           &:hover
-            border-color: $special-text-light
+            border-color: $light-blue
 
-  .our-services , .our-skills , .our-team
+  .our-services , .our-skills , .our-teams
     .content
       .notice-exp
-        color: $special-text-light
+        color: $dark-black
         &::before
-          background: $btn-color-light
+          background: $dark-blue
         &::after
-          color: $text-color-light
+          color: $white
   .our-services
     .content
-      box-shadow: 0 0 15px 0 $special-text-light
-      border-color: $special-text-light
+      box-shadow: 0 0 15px 0 $light-blue
+      border-color: $light-blue
       .services
         .services-exp
           &::before
-            border-color: $special-text-light
+            border-color: $dark-blue
           div
             &::before
-              border-color: $special-text-light
+              border-color: $dark-blue
             div
               &::before
-                border-color: $special-text-light
+                border-color: $dark-blue
               div
                 &::before
-                  border-color: $special-text-light
+                  border-color: $dark-blue
                 .service-exp
                   h1
-                    color: $background-light
+                    color: $dark-black
                   p
-                    color: $background-little-light
+                    color: $dark-black
                 .service-logo
-                  border-color: $btn-color-light
+                  border-color: $dark-blue
+                  h1
+                    color: $dark-blue
                   .fas
-                    background: $special-text-light
-                    color: #fafafa
+                    background: $dark-blue
+                    color: $white
           &:hover
             div
               div
@@ -420,104 +466,100 @@ body
                     border-color: transparent
                     .fas
                       background: #fafafa
-                      color: $special-text-light
-                      border-color: $special-text-light
+                      color: $dark-blue
+                      border-color: $dark-blue
 
   .our-skills
-    padding: 0
-    // &::before
-    //   z-index: auto
     .content
-      padding-bottom: 20px
-      position: inherit
-      background: #77418133
       .notice-exp
-        color: $footer-header
+        color: $white
       .counters
-        .script-team , .web-team , .electronic-team , .graphic-team
-          background: #ffffffc9
-          z-index: 2
-          .circular
-            .number
-              color: $special-text-light
-            .inner
-              background: #fafafa
-          h1
-            color: $special-text-light
-          p
-            color: $background-light
-
-  .our-team
-    border-color: $special-text-light
-    box-shadow: 0 0 15px 0 $special-text-light
+        .card
+          background: $white
+          .circle
+            .box
+              background: $white
+              span
+                color: $dark-blue
+          .text
+            color: $dark-black
+  .our-teams
     .content
+      border-color: $light-blue
+      box-shadow: 0 0 15px 0 $light-blue
       .team
         .owl-dots
           .active
-            background: $btn-color-light !important
-            border-color: $btn-color-light !important
+            background: $dark-blue !important
+            border-color: $dark-black !important
           .owl-dot
-            border-color: $btn-color-light !important
+            border-color: $dark-black !important
             &:hover
-              background: $btn-color-light !important
+              background: $dark-blue !important
         .person-profile
-          background: $btn-color-light
+          background: $dark-blue
           .zoom
-            img
+            img , i
               box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.15)
-              border: 4px solid $text-color-light
+              border: 4px solid $white
+              background: $dark-blue
+              color: $white
             .name , .job
               transition: 0.3s
-              color: $text-color-light
+              color: $white
             .name
               font-weight: 800
           &:hover
             .zoom
-              img
+              img , i
                 box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5)
                 border: none
+                background: $white
+                color: $dark-black
               .name
                 font-size: 20px
+              .name , .job
+                color: $dark-black
 
   .footer
-    background: $footer-light
-    box-shadow: inset 0px 30px 40px -20px $special-text-light,inset 0px -11px 8px -10px #CCC
+    background: $white
+    box-shadow: inset 0px 30px 40px -20px $light-blue,inset 0px -11px 8px -10px #CCC
     .footer-content
       .footer-logo
         .elogo
           background-image: url("https://imgs.elkoob.ir/about/elogo-light.png")
       .footer-logo, .footer-contact, .footer-followus
         h1
-          color: $special-text-light
+          color: $dark-blue
         ul , p , .ourteam-link a
-          color: $background-light
+          color: $background
         .ourteam-link
           a
             &::before , &::after
-              border-color: $background-light
+              border-color: $background
       .footer-contact
         ul .contact-exp
           &::before
-            border-color: $btn-color-light
+            border-color: $dark-blue
           .fas , .fab
-            color: $btn-color-light
+            color: $dark-blue
       .footer-followus
         nav
           .followus-exp
             .fab , .fa-gap , .fa-aparat
-              border-color: $btn-color-light
-              color: $btn-color-light
+              border-color: $dark-blue
+              color: $dark-blue
               background-color: transparent
             .fa-aparat
               background-image: url("https://imgs.elkoob.ir/about/aparatlogo-light.png")
             .fa-gap
               background-image: url("https://imgs.elkoob.ir/about/gaplogo-light.png")
     .copyright
-      background: $copyright-footer-light
+      background: $light-green
       p
-        color: $background-light
+        color: $dark-black
         a
-          color: $btn-color-light
+          color: $dark-blue
           &:hover
             font-weight: 700
             font-size: 18px
@@ -535,9 +577,8 @@ body
 .navbar
   position: relative
   display: flex
-  max-width: calc(100% - 200px)
   margin: 0 auto
-  height: 70px
+  height: max-content
   justify-content: space-between
   padding: 60px 100px
   transition: all 0.7s
@@ -552,7 +593,7 @@ body
       top: 0
       height: 100%
       width: 100%
-      background-color: $black-background
+      background-color: $dark-black
       transition: 0.3s ease
       transform: scaleX(0)
       transform-origin: left
@@ -561,184 +602,104 @@ body
   margin-left: 80px
   display: flex
   text-decoration: none
+  a
+    text-decoration: none
   .language-select
     text-decoration: none
     .lang-choose
       width: 120px
       transition: all 0.5s ease
       position: absolute
-      background: $black-background
+      background: $dark-black
       top: 120px
-      right: 20px
-      z-index: -1
+      right: 50px
       opacity: 0
       visibility: hidden
       border-radius: 0 0 5px 5px
-      border-right: 5px solid $special-text
+      border-right: 5px solid $light-blue
       .lang-Farsi , .lang-English
+        height: 50px
         width: 100%
+        font-family: sans-serif
+        font-size: 20px
+        overflow: hidden
         line-height: 30px
         position: relative
         display: block
         text-align: center
-        margin: 0
+        margin: 5px 0
         border-radius: 0px
-        color: $special-text
+        color: $light-blue
         transition: all 0.5s ease
-      .lang-Farsi
-        height: 50px
-        width: 100px
-        font-family: sans-serif
-        font-weight: 700
-        font-size: 20px
-        overflow: hidden
-        margin: 10px
-        border-radius: 0 10px 0 10px
-        &::after
-          content: 'فارسی'
-          width: 100%
-          height: 100%
-          position: absolute
-          top: 0
-          left: 100%
-          transition: 0.3s linear
-          z-index: 2
-          background: rgba(32, 34, 36, 0.5)
-          line-height: 50px
-        &::before
-          content: ''
-          width: 100%
-          height: 100%
-          top: 0
-          left: 0
-          position: absolute
-          background: url("https://imgs.elkoob.ir/about/Iran-flag.jfif")
-          background-repeat: no-repeat
-          background-position: center
-          background-size: cover
-          z-index: 1
-          transition: 0.3s linear
         &:hover
-          width: 100%
-          margin: 10px 0
+          font-weight: 700
+          margin: 5px 0px 5px -10px
           &::after
             left: 0
-          &::before
-            filter: blur(1px)
-      .lang-English
-        width: 100px
-        height: 50px
-        overflow: hidden
-        margin: 10px
-        border-radius: 10px 0 10px 0
-        &::after
-          content: 'English'
-          width: 100%
-          height: 100%
-          position: absolute
-          top: 0
-          left: 100%
-          transition: 0.3s linear
-          z-index: 2
-          background: rgba(32, 34, 36, 0.5)
-          line-height: 50px
-        &::before
-          content: ''
-          width: 100%
-          height: 100%
-          top: 0
-          left: 0
-          position: absolute
-          background: url("https://imgs.elkoob.ir/about/UK-flag.jfif")
-          background-repeat: no-repeat
-          background-position: center
-          background-size: cover
-          z-index: 1
-          transition: 0.3s linear
-        &:hover
-          width: 100%
-          margin: 10px 0px
-          &::after
-            left: 0
-          &::before
-            filter: blur(1px)
     &:hover
       .lang-choose
         opacity: 1
         visibility: visible
       .fas
-        color: $black-background
-        background: $text-color
+        color: $dark-black
+        background: $gray
     .fas
-      user-select: none
-      cursor: pointer
-      position: absolute
-      bottom: 8%
-      right: 20px
-      line-height: 30px
-      font-size: 20px
-      text-align: center
-      background: $btn-color
-      border-radius: 100%
       width: 30px
       height: 30px
+      line-height: 30px
+      position: absolute
+      bottom: 0
+      top: 0
+      right: 50px
+      margin: auto
+      user-select: none
+      cursor: pointer
+      font-size: 20px
+      text-align: center
+      background: $dark-blue
+      border-radius: 100%
   a
     font-size: 18px
     font-weight: 500
-    color: $text-color
+    color: $gray
     transition: 0.3s
     padding: 7px 17px
     margin: 2px
     border-radius: 5px
     &:hover
       text-decoration: none
-      background-color: $btn-color
+      background-color: $dark-blue
 
 
 .navbar-scroll
-  padding: 10px 50px
-  background-color: $black-background
+  padding: 10px +0px 10px 50px
+  background-color: $dark-black
   z-index: 9999
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.15)
   .navbar
     padding: 0
-    .search-icon
-      margin-right: 125px
     .content
       .nav-links
-        #ThemeSwitch
-          bottom: unset
-          top: 50%
-          transform: translateY(-50%)
         .language-select
           .lang-choose
-            top: 80px
-          .fas
-            bottom: unset
-            top: 50%
-            transform: translateY(-50%)
-  .search-box
-    padding-top: 0
-    max-width: calc(100% - 50px)
-    .go-icon
-      transform: translateY(-50%)
+            top: 50px
 
 .brand
   font-weight: bold
   font-size: 30px
   font-weight: 600
   transition: 0.7s
-  color: $text-color
+  color: $gray
   text-decoration: none
   border-bottom: solid 2px transparent
   &:hover
     text-decoration: none
-    color: $special-text
+    color: $light-blue
     vertical-align: middle
-    border-bottom: solid 2px $btn-color
+    border-bottom: solid 2px $dark-blue
 
-.search-icon , .menu-icon
-  color: $text-color
+.menu-icon
+  color: $gray
   margin-right: 25px
   font-size: 18px
   cursor: pointer
@@ -747,63 +708,20 @@ body
   text-align: center
   transition: 0.3s
   &:hover
-    color: $btn-color
+    color: $dark-blue
 
 .menu-icon
   display: none
 
-.search-box
-  position: absolute
-  height: 100%
-  max-width: calc(100% - 270px)
-  width: 100%
-  opacity: 0
-  pointer-events: none
-  transition: all 0.3s ease
-  padding-top: 60px
-  input
-    width: calc(100% - 20px)
-    height: 100%
-    border: none
-    outline: none
-    font-size: 17px
-    color: $text-color
-    background: none
-    // background: $dark-background
-    &::placeholder
-      color: $text-color
+//each section
+.section
+  .container
+    max-width: 1280px !important
+    margin: auto
+    padding: 0 15px
 
-.go-icon
-  position: absolute
-  right: 0px
-  top: 50%
-  transform: translateY(8%)
-  line-height: 60px
-  width: 70px
-  background: none
-  border: none
-  outline: none
-  color: $text-color
-  font-size: 20px
-  cursor: pointer
-  transition: 0.3s
-  &:hover
-    color: $btn-color
 
-#show-search
-  &:checked ~ .menu-icon
-    display: none
-  &:checked ~ .search-box
-    opacity: 1
-    pointer-events: auto
-  &:checked ~ .content
-    opacity: 0
-    pointer-events: none
-  &:checked ~ .search-icon
-    margin-right: 0
-    i
-      &::before
-        content: "\f00d"
+
 
 // welcome
 
@@ -812,38 +730,27 @@ body
   height: 100vh
   display: flex
   transition: 0.3s linear
-  background-image: url("https://imgs.elkoob.ir/about/background-dark-mob.jpg")
   vertical-align: middle
   align-items: center
   background-size: cover
-  background-position: 85%
+  background-position: center
   background-repeat: no-repeat
-  &::before
-    content: ''
-    width: 100%
-    height: 100%
-    position: absolute
-    transition: 0.3s linear
-    background-size: cover
-    background-position: 40px
-    background-repeat: no-repeat
-    background-image: url("https://imgs.elkoob.ir/about/code2.jpeg")
-    z-index: -100
-
+  background-attachment: fixed
+  background-image: url("https://imgs.elkoob.ir/about/background-dark-mob.jpg")
 
 .welcome-content
-  padding-left: 100px
   transition: 0.3s linear
 
 .notice
+  display: inline-block
   transition: 0.3s linear
-  color: $special-text
+  color: $light-blue
   text-align: left
   font-size: 3rem
-  display: inline-block
   user-select: none
   width: 100%
   padding: 0 40px
+  font-family: Cinema
 
 .links
   width: 100%
@@ -851,7 +758,7 @@ body
   margin-top: 20px
   padding-left: 20px
   a
-    color: $text-color
+    color: $gray
     margin: 2px 6px
     padding: 5px 10px
     border-radius: 2px
@@ -862,38 +769,39 @@ body
     display: inline-block
     border-bottom: solid 2px transparent
     &:hover
-      color: $footer-header
+      color: $light-green
       background-color: none
-      border-bottom: solid 2px $btn-color
+      border-bottom: solid 2px $dark-blue
 
 // our-services
 .our-services
   width: 100%
   height: max-content
   display: block
-  color: $text-color
+  color: $gray
   margin: 70px auto
   .content
-    margin: 0 20px
-    padding: 10px 0px 60px 0px
+    padding: 10px 0px 40px 0px
     border-bottom: 5px solid
-    border-color: $btn-color
-    box-shadow: 0 0 15px 0 $btn-color
+    border-color: $dark-blue
+    box-shadow: 0 0 15px 0 $dark-blue
     .notice-exp
       margin-bottom: 80px
       &::after
         content: 'How we can help'
     .services
-      user-select: none
       width: 100%
+      height: max-content
+      display: flex
+      user-select: none
       text-align: center
       margin: 0 auto
+      flex-wrap: wrap
+      justify-content: center
       .services-exp
+        max-width: 500px
         display: inline-flex
-        align-items: center
-        vertical-align: middle
-        width: calc(95% / 2)
-        padding: 5px 10px
+        padding: 10px 15px
         margin: 5px 10px
         position: relative
         overflow: hidden
@@ -904,27 +812,32 @@ body
           position: absolute
           right: 100%
           bottom: 0
-          border-bottom: solid 2px $special-text
+          border-bottom: solid 2px $light-blue
           transition: all 0.7s
         &:hover
           &::before
             right: 0%
           div
+            width: 100%
+            height: 100%
             &::before
               left: 0%
             div
+              width: 100%
+              height: 100%
               &::before
                 top: 0
               div
+                width: 100%
+                height: 100%
                 &::before
                   top: 0
           .service-logo
-            border-left: 5px solid transparent
             i
-              color: $special-text
-              background-color: $dark-background
-              border-right: 3px solid $special-text
-              border-left: 3px solid $special-text
+              color: $light-blue
+              background-color: $dark-black-blue
+              border-right: 3px solid $light-blue
+              border-left: 3px solid $light-blue
 
         div
           transition: all 0.3s ease
@@ -935,7 +848,7 @@ body
             position: absolute
             left: 100%
             top: 0
-            border-top: solid 2px $special-text
+            border-top: solid 2px $light-blue
             transition: all 0.7s
           div
             transition: all 0.3s ease
@@ -944,45 +857,52 @@ body
               height: 100%
               width: 2px
               position: absolute
-              top: -100%
+              top: -102%
               left: 0
-              border-left: solid 2px $special-text
+              border-left: solid 2px $light-blue
               transition: all 0.7s
             div
-              display: inline-flex
+              display: inline-block
               align-items: center
               vertical-align: middle
               transition: all 0.3s ease
               &::before
                 content: ''
                 height: 100%
-                width: 100%
                 position: absolute
                 top: 100%
                 right: 0
+                left: unset !important
                 border: none
-                border-right: solid 2px $special-text
+                border-right: solid 2px $light-blue
                 transition: all 0.7s
               .service-logo
+                height: max-content
+                width: max-content
+                display: flex
                 transition: 0.1s linear
-                border-left: 5px solid $btn-color
+                #first-service-notice
+                  padding-left: 10px
+                  font-size: 22px
                 i
                   width: 50px
                   height: 50px
+                  display: flex
+                  justify-content: center
+                  align-items: center
                   font-size: 20px
-                  margin: 30px
-                  padding: 15px 10px
-                  background-color: $btn-color
+                  background-color: $dark-blue
                   border-radius: 50%
                   transition: 0.3s linear
-                  color: $dark-background
-                  background-color: $special-text
-                  border-right: 0px solid $text-color
-                  border-left: 0px solid $text-color
+                  color: $dark-black-blue
+                  background-color: $light-blue
+                  border-right: 0px solid $gray
+                  border-left: 0px solid $gray
               .service-exp
                 display: inline-block
+                padding-left: 70px
                 h1
-                  color: $footer-header
+                  color: $light-green
                   text-align: left
                   font-size: 20px
                   font-weight: 700
@@ -993,7 +913,7 @@ body
 //ourskills
 
 .our-skills
-  padding: 0 0 20px 0
+  padding: 30px 0
   margin-top: 70px
   background-image: url("https://imgs.elkoob.ir/about/code1.jpg")
   background-size: cover
@@ -1001,69 +921,76 @@ body
   background-attachment: fixed
   background-position: right
   .content
+    display: flex
+    flex-direction: column
     .notice-exp
       &::after
         content: 'Skills Sections'
     .counters
-      user-select: none
+      width: 100%
       display: flex
-      justify-content: space-evenly
-      margin-top: 40px
-      .script-team , .web-team , .electronic-team , .graphic-team
-        margin: 0 5px
-        width: 250px
-        max-width: 250px
-        background-color: #1a2029cc
-        border-radius: 10px
-        padding: 35px 20px
-        display: grid
-        justify-items: center
-        h1
+      align-items: center
+      justify-content: space-between
+      flex-wrap: wrap
+      margin-top: 20px
+      .card
+        width: calc(23% - 20px)
+        height: 300px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-evenly
+        background: $dark-black-blue
+        border-radius: 5px
+        .text
           font-size: 20px
-          font-weight: 700
-          padding-top: 20px
-          color: $btn-color
-        p
-          padding-top: 5px
-          color: $text-color
-        .circular
-          display: flex
-          height: 100px
-          width: 100px
+          font-weight: 600
+          color: $gray
+        .circle
+          height: 150px
+          width: 150px
           position: relative
-          transform: scale(1.25)
-          .number
-            color: $special-text
+          border-radius: 50%
+          cursor: default
+          &:hover
+            .box
+              transform: translate(-50% , -50%) scale(0.91)
+              span
+                transform: translate(-45% , -50%) scale(1.09)
+          .box
+            height: 100%
+            width: 100%
             position: absolute
             top: 50%
             left: 50%
-            transform: translate(-50% , -50%)
-            z-index: 10
-            font-size: 18px
-            font-weight: 500
-          .inner
-            width: 90px
-            height: 90px
-            position: absolute
-            top: 50%
-            left: 50%
-            z-index: 6
-            margin: -45px 0 0 -45px
-            background: rgba(32, 34, 36, 1)
-            border-radius: 100%
-            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2)
+            transform: translate(-50% , -50%) scale(0.8)
+            border-radius: 50%
+            background: $dark-black-blue
+            transition: all 0.2s
+            span
+              position: absolute
+              top: 50%
+              left: 50%
+              font-size: 38px
+              font-weight: 600
+              transform: translate(-45% , -50%)
+              color: $light-blue
+              transition: all 0.1s
 
 
 
-// ourteam
-.our-team
-  max-width: 100%
-  margin: 70px 50px
+// ourteams
+#our-teams
+  margin: 70px 0
+
+.our-teams
+  margin: auto
   height: 100%
-  padding: 10px 10px 60px 10px
-  border-bottom: 5px solid
-  border-color: $btn-color
-  box-shadow: 0 0 15px 0 $btn-color
+  .content
+    padding: 10px 10px 60px 10px
+    border-bottom: 5px solid
+    border-color: $dark-blue
+    box-shadow: 0 0 15px 0 $dark-blue
 
 .team
   text-align: center
@@ -1077,10 +1004,11 @@ body
 
 .person-profile
   height: 300px
-  padding: 25px 35px
+  width: 100%
+  padding: 10px 15px
   text-align: center
   overflow: hidden
-  color: $text-color
+  color: $gray
   vertical-align: top
   display: inline-block
   transition: all 0.3s ease
@@ -1088,22 +1016,42 @@ body
   cursor: pointer
   background-color: rgba( 32, 34, 36, .8)
   .zoom
+    display: flex
+    flex-direction: column
     transition: all 0.3s ease
+    i
+      color: $gray
+      width: 150px !important
+      height: 150px
+      display: flex
+      justify-content: center
+      align-items: center
+      margin: 5px auto 20px auto
+      border-radius: 50%
+      border: solid $light-blue 4px
+      overflow: hidden
+      transition: all 0.7s ease
+      font-size: 100px
+      color: $dark-black-blue
+      background: $light-blue
   &:hover
-    color: $dark-background
+    color: $dark-black-blue
     .zoom
       transform: scale(1.05)
-    img
-      border-color: $dark-background
-      box-shadow: 0 0 0 38em $special-text
+    img , i
+      border-color: $dark-black-blue
+      box-shadow: 0 0 0 38em $light-blue
     p
-      color: $dark-background
+      color: $dark-black-blue
     .name
       font-size: 18px
       font-weight: 700
 
+
+
+
 .name
-  color: $special-text
+  color: $light-blue
   margin: 2px 6px
   padding: 5px 10px
   border-radius: 2px
@@ -1112,20 +1060,22 @@ body
   text-decoration: none
   box-sizing: border-box
   display: inline-block
-  width: 100%
-  display: block
 
 img
-  color: $text-color
+  color: $gray
   width: 150px !important
-  margin: 5px auto
+  height: 150px
+  object-fit: cover
+  margin: 5px auto 20px auto
   border-radius: 50%
-  border: solid $special-text 4px
+  border: solid $light-blue 4px
   overflow: hidden
   transition: all 0.7s ease
 
 .job
-  color: $text-color
+  height: auto
+  width: 100%
+  color: $gray
   // margin: 2px 6px
   padding: 5px 10px
   border-radius: 2px
@@ -1134,15 +1084,12 @@ img
   text-decoration: none
   box-sizing: border-box
   display: inline-block
-  height: auto
-  width: 100%
-  display: block
 
 
 .notice-exp
   width: 100%
   position: relative
-  color: $footer-header
+  color: $light-green
   text-align: center
   font-size: 3rem
   display: inline-block
@@ -1157,7 +1104,7 @@ img
   transform: translateX(-50%)
   width: 180px
   height: 5px
-  background-color: $special-text
+  background-color: $light-blue
   border-radius: 20px
 
 .notice-exp::after
@@ -1166,7 +1113,7 @@ img
   bottom: -40px
   left: 50%
   padding: 5px 10px
-  background-color: $footer
+  background-color: $dark-black-blue-almostsame
   transform: translateX(-50%)
   font-size: 17px
   color: #e3e2df
@@ -1182,7 +1129,7 @@ img
     margin: 0 5px
     outline: none!important
     border-radius: 50%
-    border: 2px solid $special-text!important
+    border: 2px solid $light-blue!important
     transition: all 0.3s ease
 
 .owl-dot.active
@@ -1190,7 +1137,7 @@ img
     border-radius: 14px
 
 .owl-dot.active , .owl-dot:hover
-    background: $special-text!important
+    background: $light-blue!important
 
 .owl-carousel
   z-index: auto
@@ -1202,10 +1149,10 @@ img
     width: 10px
 
 ::-webkit-scrollbar-track
-    background: $black-background
+    background: $dark-black
 
 ::-webkit-scrollbar-thumb
-    background: $special-text
+    background: $light-blue
     transition: 0.3s ease
     border-radius: 10px
 
@@ -1231,20 +1178,17 @@ img
 // footer
 
 .footer
-    background-color: $footer
+    background-color: $dark-black-blue-almostsame
     width: 100%
-    height: 380px
     display: block
     .footer-content
       display: flex
+      justify-content: space-between
       box-sizing: border-box
       text-align: center
       height: 100%
       width: 100%
-      .footer-contact
-        padding-left: 110px !important
       .footer-logo
-        padding-left: 100px !important
         .elogo
           width: 150px
           height: 150px
@@ -1257,9 +1201,10 @@ img
           text-align: center
       .footer-logo , .footer-contact , .footer-followus
         height: 100%
-        width: calc(100% / 3)
-        padding: 20px 40px
-        color: $text-color
+        width: auto
+        max-width: 400px
+        padding: 10px 15px
+        color: $gray
         font-weight: 700
         font-size: 30px
         user-select: none
@@ -1268,7 +1213,7 @@ img
         .contact-exp , .followus-exp
           i
             padding-right: 15px
-            color: $special-text
+            color: $light-blue
         .contact-exp
           padding: 10px 0px
           position: relative
@@ -1282,7 +1227,7 @@ img
             position: absolute
             right: 100%
             bottom: 0
-            border-bottom: solid 2px $special-text
+            border-bottom: solid 2px $light-blue
           &:hover
             &::before
               content: ''
@@ -1304,7 +1249,7 @@ img
             border-radius: 50%
             height: 40px
             width: 40px
-            border: solid 2px $special-text
+            border: solid 2px $light-blue
             &::before
               transform: translateX(-50%)
               position: absolute
@@ -1350,7 +1295,7 @@ img
                 font-size: 27px
                 background-image: url("https://imgs.elkoob.ir/about/aparatlogo-hover.png") !important
                 border-color: #E91E63
-                background-color: $footer-header
+                background-color: $light-green
             .fa-gap
                 color: #263238
                 font-size: 27px
@@ -1362,9 +1307,9 @@ img
             height: 40px
             width: 40px
             transition: all 0.3s ease
-            border: solid 2px $special-text
+            border: solid 2px $light-blue
             background-image: url("https://imgs.elkoob.ir/about/aparatlogo.png")
-            background-color: $footer
+            background-color: $dark-black-blue-almostsame
             background-repeat: no-repeat
             background-position: center
             background-size: cover
@@ -1382,21 +1327,21 @@ img
             overflow: hidden
             text-decoration: none
             transition: all 0.7s
-            color: $text-color
+            color: $gray
             &::before
               content: ''
               width: 100%
               position: absolute
               right: 350px
               bottom: 0
-              border-bottom: dashed 2px $text-color
+              border-bottom: dashed 2px $gray
             &::after
               content: ''
               width: 100%
               position: absolute
               left: 0
               bottom: 0
-              border-bottom: dashed 2px $text-color
+              border-bottom: dashed 2px $gray
             &:hover
               &::before
                 content: ''
@@ -1413,8 +1358,7 @@ img
           display: block
           padding: 50px 0px 20px 0
           text-align: left
-          font-style: italic
-          color: $footer-header
+          color: $light-green
         ul , p
           padding: 0
           font-size: 17px
@@ -1422,9 +1366,11 @@ img
           text-align: left
 
     .copyright
-      background: $copyright-footer
+      width: 100%
+      margin-top: 20px
+      background: $black-lighter
       p
-        color: $text-color
+        color: $gray
         padding: 10px 50px
         font-weight: bold
         text-align: center
@@ -1437,11 +1383,40 @@ img
         font-weight: bold
         transition: all 0.3s
         &:hover
-          color: $special-text
+          color: $light-blue
 
 
 // responsive code
-@media screen and (max-width: $big)
+// for high resolotion devices
+@media screen and (min-width:$ex-larg)
+  #app
+    .wrapper
+      .navbar
+        max-width: 1280px
+        .content
+          .nav-links
+    .navbar-scroll
+      padding: 0
+      .navbar
+        padding: 10px 100px
+
+    .section
+      .container
+        max-width: 1280px !important
+        margin: auto
+        padding: 0 15px
+
+
+  //footer
+  .footer
+    .dark-black-blue-almostsame-content
+      justify-content: space-around
+      .footer-followus , .footer-contact , .footer-logo
+        h1
+          font-size: 35px
+
+//media for medium devices
+@media screen and (max-width: $larg)
 
   //rtl (persain mode)
   // navbar
@@ -1460,23 +1435,10 @@ img
   .navbar-scroll
     .navbar
       padding: 0
-    .search-box
-      padding-top: 0
-      max-width: calc(100% - 50px)
-      .go-icon
-        transform: translateY(-50%)
 
   .navbar
     max-width: 100%
-    padding: 60px 100px
-
-  .search-box
-    padding-top: 60px
-    max-width: calc(100% - 270px)
-
-  .go-icon
-    transform: translateY(8%)
-    right: 0
+    padding: 60px 50px
 
   .navnav-links
     margin-left: 30px
@@ -1488,17 +1450,15 @@ img
     .welcome-content
       padding: 0
 
-
   //footer
   .footer
-    height: 340px
     .footer-content
+      justify-content: space-around
       .footer-followus , .footer-contact , .footer-logo
         padding: 0
         h1
-          font-size: 1.75rem
+          font-size: 30px
       .footer-followus
-        padding-left: 50px
         h1
           max-width: 200px
           margin: 0 auto
@@ -1511,16 +1471,20 @@ img
             margin: 10px 10px 0 10px
       .footer-contact
         max-width: 200px
-        padding: 0 !important
-        margin: 0 auto
         .contact-exp
           font-size: 15px
       .footer-logo
         max-width: 300px
-        padding: 0 !important
-        margin: 0 auto
 
+//media for tablet devices
 @media screen and (max-width: $medium)
+
+  //section conrainter
+  .section
+    .container
+      max-width: 600px
+
+
 
   //rtl (persain mode)
   // navbar
@@ -1531,19 +1495,9 @@ img
           &:checked ~ .content .nav-links
             left: unset
             right: 0
-        .search-icon
-          margin: 0
-          margin-right: 0 !important
         .menu-icon
           width: 70px
           margin-right: 0
-        .search-box
-          input
-            padding-top: 0
-            margin: 0 25px 0 0
-          .go-icon
-            left: -50px
-            right: unset
         .content
           &::before
             transform-origin: right
@@ -1557,7 +1511,7 @@ img
               left: 35px
             .language-select
               .lang-choose
-                border-right: 5px solid
+                border-right: 5px solid #66fcf1
                 border-left: none
                 .lang-Farsi , .lang-English
                   border-radius: 5px 0 0 5px
@@ -1567,15 +1521,9 @@ img
                     &::after
                       left: 0
     .navbar-scroll
-      .navbar
-        .search-icon
-          width: auto
-          margin-bottom: 0.5rem
-        .menu-icon
-          width: auto
-        .search-box
-          .go-icon
-            left: -5px
+      padding: 0
+
+
 
     // welcome
     .welcome
@@ -1590,32 +1538,24 @@ img
   .light
     .wrapper
       .navbar
-        #show-search
-          &:checked ~ .search-icon
-            margin-bottom: 0
         #show-menu
           &:checked ~ .menu-icon
-            color: $background-light
-          &:checked ~ .search-icon
-            color: $background-light
+            color: $background
           &:checked ~ .content
             .brand , .nav-links a
-              color: $background-light
-        .menu-icon , .search-icon
+              color: $dark-black
+        .menu-icon
           &:hover i
             transition: 0.3s
-            box-shadow: 0 0 15px 0 #774181
-            color: $special-text-light !important
+            box-shadow: 0 0 15px 0 $light-blue
+            color: $light-blue !important
         .menu-icon i
           height: 30px
           width: 30px
           line-height: 30px
           border-radius: 100%
-          color: $background-light
-          background: $text-color-light
-        .search-icon
-          margin-bottom: 0.5rem
-          margin-right: 0
+          color: $background
+          background: $gray
         .content
           &::before
             background: #fafafa
@@ -1623,38 +1563,36 @@ img
             background: #fafafa
             a
               &:hover
-                color: $text-color-light !important
+                color: $dark-black
             .language-select
               .lang-label
                 &:hover
-                  background: $special-text-light
+                  background: $light-blue
                   .fas
                     background: white
               .lang-Farsi , .lang-English
                 border-radius: 0 5px 5px 0
                 &::after
-                  color: $text-color-light
+                  color: $gray
               .fas
     .navbar-scroll
       .navbar
-        .search-icon
-          margin-right: 30px
-        .search-box
-          .go-icon
-            color: $background-light
         .content
-          .brand
           .nav-links
             a
               &:hover
-                background: $special-text-light
+                background: $light-blue
             .language-select
     .welcome
       .welcome-content
         text-align: center
-        background: #77418185
+        background: #66fcf142
         .links
           padding: 0
+          a
+            color: $white
+        .notice
+          color: $white
 
 
 
@@ -1662,10 +1600,18 @@ img
   .navbar
     padding: 0
     .content
+      height: 70px
+      justify-content: center
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      margin: auto
+      z-index: 1
       .nav-links
         display: block
         position: fixed
-        background: $navbar-bg
+        background: $dark-black-thisislighter
         height: 100%
         width: 100%
         top: 70px
@@ -1698,8 +1644,8 @@ img
           &:hover
             .lang-icon
               .fas
-                color: $black-background
-                background: $btn-color
+                color: $dark-black
+                background: $dark-blue
           #show-langs
             &:checked ~ .lang-choose
               max-height: 100vh
@@ -1710,8 +1656,8 @@ img
             &:hover
               cursor: pointer
               .fas
-                color: $black-background
-                background: $text-color
+                color: $dark-black
+                background: $gray
           .lang-icon
             width: 100%
             line-height: 40px
@@ -1723,7 +1669,7 @@ img
             border-radius: 5px
             &:hover
               text-decoration: none
-              background-color: $btn-color
+              background-color: $dark-blue
           .fas
             position: inherit
           .lang-choose
@@ -1734,7 +1680,7 @@ img
             background: none
             max-height: 0px
             overflow: hidden
-            border-left: 5px solid $special-text
+            border-left: 5px solid $light-blue
             border-right: none
             .lang-Farsi , .lang-English
               margin: 7px 0px
@@ -1745,19 +1691,9 @@ img
               &::after
                 left: -100%
               &:hover
+                margin: 7px 0 !important
                 &::after
                   left: 0
-    .search-icon
-      margin-right: 0
-    .search-box
-      padding-top: 0
-      max-width: calc(100% - 120px)
-      input
-        margin-left: 25px
-      .go-icon
-        right: -50px
-        transform: translateY(-50%)
-
   #show-menu
     &:checked ~ .content
       .nav-links
@@ -1772,16 +1708,13 @@ img
 
   .menu-icon
     display: block
-
+    z-index: 2
   .navbar-scroll
     padding: 0px
     .navbar
       padding: 0px 25px
-      .menu-icon , .search-icon
+      .menu-icon
         margin-right: 0
-      .search-box
-        .go-icon
-          right: -5px
       .content
         .nav-links
           .language-select
@@ -1794,31 +1727,33 @@ img
   .welcome
     background-image: url("https://imgs.elkoob.ir/about/background-dark.jpg")
     background-position: center
+    justify-content: center
+    .container
     .welcome-content
       background-color: rgba(32, 34, 36, 0.8)
-      position: absolute
-      left: 50%
-      transform: translateX(-50%)
       max-width: 450px
       text-align: center
-      border: solid 3px $special-text
+      border: solid 3px $light-blue
       border-bottom: none
+      padding: 20px 0
+      margin: 0 20px
       .notice
-        width: max-content
+        width: 100%
         height: max-content
         text-align: center
         font-size: 2.5rem
-        margin: 0
+        margin: 10px 0
+        display: block
       .links
-        display: inline
+        display: flex
         width: 100%
-        line-height: 50px
-        height: 50px
         padding: 0
-        margin: 0
+        margin: 45px 0
+        flex-wrap: wrap
+        justify-content: space-evenly
         a
-          display: inline
-          margin: 0
+          display: inline-block
+          margin: 5px 10px
 
   //our-services
   .our-services
@@ -1837,7 +1772,6 @@ img
                     height: 48px
                     font-size: 18px
                     margin: 25px
-                    padding: 15px 8px
                 .service-exp
                   h1
                     font-size: 18px
@@ -1848,27 +1782,15 @@ img
   .our-skills
     .content
       .counters
-        display: inline-block
-        text-align: center
-        margin-top: 20px
-        .script-team , .web-team , .electronic-team , .graphic-team
-          display: inline-grid
-          margin: 10px
-          width: 200px
-          max-width: 200px
-          padding: 25px 15px
-          h1
-            font-size: 16px
-            padding-top: 15px
-          p
-            font-size: 14px
-            padding-top: 0px
-          .circular
-            transform: scale(1)
+        width: 100%
+        .card
+          width: calc(50% - 20px)
+          margin-bottom: 20px
+
 
 
   //ourteam
-  .our-team , .our-services , .our-skills
+  .our-teams , .our-services , .our-skills
     .content
       .notice-exp
         font-size: 30px
@@ -1881,6 +1803,10 @@ img
       .team
         .person-profile
           height: 100%
+          display: flex
+          justify-content: center
+          align-items: center
+          min-height: 300px
           padding: 5px
           .zoom
             height: 100%
@@ -1895,7 +1821,7 @@ img
       .footer-logo
         display: none
       .footer-contact , .footer-followus
-        width: calc(100% / 2)
+        width: max-content
         padding-left: 0
     .copyright
       p
@@ -1903,7 +1829,7 @@ img
         font-size: 14px
         a
           font-size: 16px
-
+//media for phone and small devices
 @media screen and (max-width: $small)
 
   //rtl (persain mode)
@@ -1915,37 +1841,22 @@ img
       .navbar
         .menu-icon
           width: 40px
-        .search-box
-          .go-icon
-            left: -80px
-    .navbar-scroll
-      .navbar
-        .menu-icon
-          width: auto
-        .search-box
-          .go-icon
-            left: -30px
-            right: unset !important
 
   .navbar-scroll
-    .search-icon , .menu-icon
+    .navbar
+      padding: 0
+    .menu-icon
       margin: 0!important
-    .search-box
-      .go-icon
-        right: -30px!important
-        width: 40px
+
   .navbar
     height: 50px
-    .menu-icon , .search-icon
+    .menu-icon
       margin-right: 0
       line-height: 50px
       font-size: 15px
       width: 40px
-    .search-box
-      .go-icon
-        right: -80px
-        width: 40px
     .content
+      height: 50px
       .brand
         font-size: 20px
       .nav-links
@@ -1982,7 +1893,6 @@ img
   // welcome-content
   .welcome
     .welcome-content
-      width: 300px
       .notice
         width: 100%
         padding: 0 5px
@@ -1990,8 +1900,6 @@ img
         font-weight: 500
       .links
         width: 100%
-        line-height: 50px
-        height: 50px
         a
           font-size: 15px
 
@@ -2007,23 +1915,35 @@ img
             div
               div
                 .service-logo
+                  width: 100%
+                  flex-direction: column
+                  justify-content: center
                   i
                     width: 46px
                     height: 46px
                     font-size: 16px
-                    margin: 20px
-                    padding: 15px 6px
+                    margin: 20px 0
                 .service-exp
+                  padding: 20px 0
+                  height: max-content
                   h1
                     font-size: 16px
                   p
+                    text-align: center
                     font-size: 14px
 
 
-
-
+  //ourskills
+  .our-skills
+    .content
+      .counters
+        width: 100%
+        justify-content: center
+        .card
+          width: 100%
+          max-width: 300px
   //ourteam
-  .our-team , .our-services
+  .our-teams , .our-services
     .content
       .notice-exp
         font-size: 25px
@@ -2052,8 +1972,9 @@ img
       .footer-logo
         display: none
       .footer-contact , .footer-followus
-        width: 100%
+        margin: auto
         h1
+          text-align: center
           font-size: 20px
           padding-top: 20px
         ul
@@ -2066,7 +1987,7 @@ img
             width: 25px
             height: 25px
             i , p
-              font-size: 20px
+              font-size: 15px
               width: 25px!important
               height: 25px!important
             &:hover

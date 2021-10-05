@@ -15,11 +15,13 @@ $dark-black-thisislighter: #222
 $scroll-bar-hover: #44a7a0
 $black-lighter: #1a1a1d
 $dark-black-blue-almostsame: #202224
+$gold: #FFD100
+$medium-blue: #0bceaf
 // light colors
 $white: #fff
 $light-green: #edf5e1
 $dark-green: #1a936f
-
+$light-gray: #f2f2f2
 // beackpoints var
 $ex-larg: 1367px
 $larg: 1367px
@@ -176,11 +178,14 @@ body
         .nav-links
           margin: 0 80px 0 0
           #ThemeSwitch
-            left: 100px
+            left: 130px
+            right: unset
+          .user-icon
+            left: 50px
             right: unset
           .language-select
             .lang-choose
-              left: 50px
+              left: 90px
               right: unset
               border-left: 5px solid #66fcf1
               border-right: none
@@ -189,7 +194,7 @@ body
                   margin: 5px -10px 5px 0
             .lang-icon
               .fas
-                left: 50px
+                left: 90px
                 right: unset
 
   .navbar-scroll
@@ -285,7 +290,7 @@ body
   position: absolute
   bottom: 0
   top: 0
-  right: 100px
+  right: 130px
   margin: auto
   -webkit-appearance: none
   cursor: pointer
@@ -347,24 +352,32 @@ body
           a
             color: $gray
             &:hover
-              background: $light-blue
+              background: $dark-blue
               color: $white
+          .user-icon
+            background: $gray
+            color: $dark-black-blue
+            &:hover
+              background: $gray
+              color: $dark-black-blue
+              box-shadow: 0 0 15px 0 $dark-black-blue
           .language-select
             .lang-choose
-              border-color: $light-blue !important
+              border-color: $dark-black-blue !important
               background: $white
               .lang-Farsi , .lang-English
                 color: $dark-black
                 border-color: $light-blue
                 &:hover
+                  background: $dark-blue
                   color: $white
             .fas
               background: $gray
+              color: $dark-black-blue
             &:hover
               .fas
-                background: $dark-black
-                color: $light-blue
-                box-shadow: 0 0 15px 0 $light-blue
+                // background: $light-gray
+                box-shadow: 0 0 15px 0 $dark-black-blue
   .navbar-scroll
     background: $white
     .navbar
@@ -380,12 +393,7 @@ body
             color: $dark-black
             &:hover
               background: $dark-blue
-          .language-select
-            .fas
-              background: $gray
-            &:hover
-              .fas
-                box-shadow: 0 0 15px 0 $light-blue
+
   .welcome
     .welcome-content
       border-color: $light-blue
@@ -409,7 +417,6 @@ body
   .our-services
     .content
       box-shadow: 0 0 15px 0 $dark-green
-      border-color: $dark-green
       .services
         .services-exp
           &::before
@@ -466,7 +473,6 @@ body
             color: $dark-black
   .our-teams
     .content
-      border-color: $dark-green
       box-shadow: 0 0 15px 0 $dark-green
       .team
         .owl-dots
@@ -503,8 +509,9 @@ body
                 color: $dark-black
 
   .footer
-    background: $white
-    box-shadow: inset 0px 30px 40px -20px $dark-green ,inset 0px -11px 8px -10px #CCC
+    background: $light-gray
+    box-shadow: inset 0px 30px 50px -50px $dark-blue ,inset 0px -11px 8px -10px #CCC
+    border-top: solid 2px $dark-blue
     .footer-content
       .footer-logo
         .elogo
@@ -536,11 +543,12 @@ body
             .fa-gap
               background-image: url("../assets/imgs/gaplogo-light.png")
     .copyright
-      background: $light-green
+      background: $dark-blue
       p
-        color: $dark-black
+        color: $light-gray
         a
-          color: $dark-blue
+          color: $dark-black-blue-almostsame
+          font-weight: 500
           &:hover
             font-weight: 700
             font-size: 18px
@@ -580,9 +588,28 @@ body
       transform-origin: left
 
 .nav-links
-  margin-left: 80px
+  margin-left: 70px
   display: flex
   text-decoration: none
+  .user-icon
+    width: 30px
+    height: 30px
+    position: absolute
+    bottom: 0
+    top: 0
+    right: 50px
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $dark-blue
+    color: $gray
+    border-radius: 50%
+    margin: auto
+    padding: 5px
+    cursor: pointer
+    &:hover
+      color: $light-gray
+      box-shadow: 0 0 15px 0 $dark-blue
   a
     text-decoration: none
   .language-select
@@ -622,8 +649,8 @@ body
         opacity: 1
         visibility: visible
       .fas
-        color: $dark-black
-        background: $gray
+        color: $light-gray
+        box-shadow: 0 0 15px 0 $light-blue
     .fas
       width: 30px
       height: 30px
@@ -631,14 +658,16 @@ body
       position: absolute
       bottom: 0
       top: 0
-      right: 50px
+      right: 90px
       margin: auto
       user-select: none
       cursor: pointer
       font-size: 20px
       text-align: center
+      color: $gray
       background: $dark-blue
-      border-radius: 100%
+      border-radius: 50%
+      transition: all 0.3s
   a
     font-size: 18px
     font-weight: 500
@@ -653,7 +682,7 @@ body
 
 
 .navbar-scroll
-  padding: 10px +0px 10px 50px
+  padding: 10px 0px 10px 50px
   background-color: $dark-black
   z-index: 9999
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.15)
@@ -1539,6 +1568,16 @@ img
             background: #fafafa
           .nav-links
             background: #fafafa
+            .user-icon
+              margin: 0
+              top: 27.50px
+              bottom: unset
+              left: unset
+              right: 110px
+              line-height: normal
+              font-size: 18px
+              display: flex
+              padding: 5px
             a
               &:hover
                 color: $dark-black
@@ -1597,6 +1636,16 @@ img
         margin-left: 0
         max-width: 350px
         transition: all 0.3s ease
+        .user-icon
+          margin: 0
+          top: 27.50px
+          bottom: unset
+          left: unset
+          right: 110px
+          line-height: normal
+          font-size: 18px
+          display: flex
+          padding: 5px
         a , .lang-icon
           margin: 15px 20px
           line-height: 40px
@@ -1819,7 +1868,13 @@ img
       .navbar
         .menu-icon
           width: 40px
-
+        .content
+          .nav-links
+            .user-icon
+              right: unset !important
+              left: 80px
+            #ThemeSwitch
+              left: 20px
   .navbar-scroll
     .navbar
       padding: 0
@@ -1840,6 +1895,13 @@ img
       .nav-links
         top: 50px
         max-width: 250px
+        .user-icon
+          width: 25px
+          height: 25px
+          top: 23.5px !important
+          right: 80px !important
+          font-size: 14px !important
+
         a , .language-select
           font-size: 16px
           line-height: 25px
@@ -1847,6 +1909,7 @@ img
           width: 50px
           height: 25px
           top: 23.5px !important
+          right: 20px !important
           &::before
             width: 20px
             height: 20px

@@ -25,7 +25,7 @@ $(".web .bar").circleProgress({
   value: 0.70,
 });
 
-$(".script .bar").circleProgress({
+$(".app .bar").circleProgress({
   value: 0.90,
 });
 

@@ -185,7 +185,7 @@ body
             right: unset
           .language-select
             .lang-choose
-              left: 90px
+              left: 85px
               right: unset
               border-left: 5px solid #66fcf1
               border-right: none
@@ -225,39 +225,11 @@ body
           div
             div
               div
-                .service-logo
-                  #first-service-notice
-                    padding-right: 10px
                 .service-exp
                   padding-right: 70px
                   padding-left: 0
                   h1 , p
                     text-align: right
-
-  // our-skills
-  .our-skills
-
-
-  // our-teams
-  .ourteam
-    .our-team
-      .content
-        .team
-          .person-profile
-            background-color: $light-gray
-          .emp , .spr , .trn
-            .zoom
-              .name , .job
-                color: $dark-black-blue-almostsame
-            .zoom
-              img
-                background: $light-gray
-              .talents
-                color: $dark-black-blue-almostsame
-    .owl-dot , .owl-dot.active , .owl-dot:hover
-      background: $dark-blue !important
-      border-color: $dark-blue !important
-
 
   // footer
   .footer
@@ -626,7 +598,8 @@ body
       position: absolute
       background: $dark-black
       top: 120px
-      right: 50px
+      right: 85px
+      left: unset
       opacity: 0
       visibility: hidden
       border-radius: 0 0 5px 5px
@@ -1411,16 +1384,34 @@ body
         max-width: 1280px
         .content
           .nav-links
+            .language-select
+              .lang-choose
+
     .navbar-scroll
       padding: 0
       .navbar
         padding: 10px 100px
+        .content
+          .nav-links
+            .language-select
+              .lang-choose
+                top: 59px
 
     .section
       .container
         max-width: 1280px !important
         margin: auto
         padding: 0 15px
+
+  //lang farsi
+  #app.lang-fa
+    .navbar-scroll
+      .navbar
+        .content
+          .nav-links
+            .language-select
+              .lang-choose
+                top: 68px
 
   //our services
   .our-services

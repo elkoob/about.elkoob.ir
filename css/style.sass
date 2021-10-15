@@ -239,7 +239,25 @@ body
 
 
   // our-teams
-  .our-teams
+  .ourteam
+    .our-team
+      .content
+        .team
+          .person-profile
+            background-color: $light-gray
+          .emp , .spr , .trn
+            .zoom
+              .name , .job
+                color: $dark-black-blue-almostsame
+            .zoom
+              img
+                background: $light-gray
+              .talents
+                color: $dark-black-blue-almostsame
+    .owl-dot , .owl-dot.active , .owl-dot:hover
+      background: $dark-blue !important
+      border-color: $dark-blue !important
+
 
   // footer
   .footer
@@ -406,6 +424,10 @@ body
           &:hover
             border-color: $light-blue
 
+  //each section
+  .notice-exp
+    color: $dark-black-blue-almostsame
+
   .our-services , .our-skills , .our-teams
     .content
       .notice-exp
@@ -471,42 +493,26 @@ body
                 color: $dark-blue
           .text
             color: $dark-black
-  .our-teams
-    .content
-      box-shadow: 0 0 15px 0 $dark-green
-      .team
-        .owl-dots
-          .active
-            background: $dark-blue !important
-            border-color: $dark-blue !important
-          .owl-dot
-            border-color: $dark-blue !important
-            &:hover
-              background: $dark-blue !important
-        .person-profile
-          background: $dark-blue
-          .zoom
-            img , i
-              box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.15)
-              border: 4px solid $white
-              background: $dark-blue
-              color: $white
-            .name , .job
-              transition: 0.3s
-              color: $white
-            .name
-              font-weight: 800
-          &:hover
+  .ourteam
+    .our-team
+      .content
+        .team
+          .person-profile
+            background-color: $light-gray
+          .emp , .spr , .trn
             .zoom
-              img , i
-                box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5)
-                border: none
-                background: $white
-                color: $dark-black
-              .name
-                font-size: 20px
               .name , .job
-                color: $dark-black
+                color: $dark-black-blue-almostsame
+            .zoom
+              img
+                background: $light-gray
+              .talents
+                color: $dark-black-blue-almostsame
+    .owl-dot.active , .owl-dot:hover
+      background: $dark-blue !important
+      border-color: $dark-blue !important
+    .owl-dot
+      border-color: $dark-blue !important
 
   .footer
     background: $light-gray
@@ -730,7 +736,39 @@ body
     margin: auto
     padding: 0 15px
 
-
+.notice-exp
+  width: 100%
+  position: relative
+  color: $light-blue
+  text-align: center
+  font-size: 2rem
+  display: inline-block
+  user-select: none
+  margin-bottom: 60px
+  &::before
+    content: ""
+    width: 280px
+    height: 5px
+    position: absolute
+    bottom: -25px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: $dark-blue
+    border-radius: 20px
+  &::after
+    content: ""
+    width: 80px
+    height: 10px
+    position: absolute
+    bottom: -35px
+    left: 50%
+    padding: 5px 10px
+    background-color: $dark-black-blue-almostsame
+    transform: translateX(-50%)
+    font-size: 17px
+    color: $light-green
+    border-radius: 20px
+    border: solid 2px $dark-blue
 
 
 // welcome
@@ -756,7 +794,7 @@ body
   transition: 0.3s linear
   color: $light-blue
   text-align: left
-  font-size: 2rem
+  font-size: 3rem
   user-select: none
   width: 100%
   padding: 0 40px
@@ -986,146 +1024,137 @@ body
 
 
 // ourteams
-#our-teams
+.ourteam
   margin: 70px 0
-
-.our-teams
-  margin: auto
-  height: 100%
-  .content
-    padding: 10px 10px 60px 10px
-    border-bottom: 5px solid
-    border-color: $dark-blue
-    box-shadow: 0 0 15px 0 $dark-blue
-
-.team
-  text-align: center
-  width: 100%
-  display: inline-block
-  margin-top: 20px
-  a
-    text-decoration: none
-    &:hover
-      text-decoration: none
-
-.person-profile
-  height: 300px
-  width: 100%
-  padding: 10px 15px
-  text-align: center
-  overflow: hidden
-  color: $gray
-  vertical-align: top
-  display: inline-block
-  transition: all 0.3s ease
-  border-radius: 6px
-  cursor: pointer
-  background-color: rgba( 32, 34, 36, .8)
-  .zoom
-    display: flex
-    flex-direction: column
-    transition: all 0.3s ease
-    i
-      color: $gray
-      width: 150px !important
+  .our-team
+    margin: auto
+    height: 100%
+    .content
+      padding: 10px 10px 60px 10px
+      border-bottom: 5px solid
+      border-color: $dark-blue
+      box-shadow: 0 0 15px 0 $dark-blue
+      .team
+        text-align: center
+        width: 100%
+        display: inline-block
+        margin-top: 20px
+        a
+          text-decoration: none
+          &:hover
+            text-decoration: none
+        .spr
+          box-shadow: inset 0px 60px 0px 2px $gold
+          &:hover
+            box-shadow: inset 0px 60px 0px 0px $gold
+          .zoom
+            .name , .job
+              color: $gold
+            .talents
+              color: $gold
+              border-color: $gold
+        .emp
+          box-shadow: inset 0px 60px 0px 2px $light-blue
+          &:hover
+            box-shadow: inset 0px 60px 0px 0px $light-blue
+          .zoom
+            .name , .job
+              color: $light-blue
+            .talents
+              color: $light-blue
+              border-color: $light-blue
+        .trn
+          box-shadow: inset 0px 60px 0px 2px $dark-blue
+          &:hover
+            box-shadow: inset 0px 60px 0px 0px $dark-blue
+          .zoom
+            .name , .job
+              color: $dark-blue
+            .talents
+              color: $dark-blue
+              border-color: $dark-blue
+        .person-profile
+          width: 100%
+          padding: 10px 15px
+          text-align: center
+          overflow: hidden
+          vertical-align: top
+          display: inline-block
+          transition: all 0.3s ease
+          border-radius: 6px
+          cursor: pointer
+          background-color: $dark-black-blue-almostsame
+          .zoom
+            display: flex
+            flex-direction: column
+            transition: all 0.3s ease
+            .name
+              display: inline-block
+              margin: 2px 6px
+              padding: 5px 10px
+              border-radius: 2px
+              transition: 0.3s
+              text-decoration: none
+              font-size: 25px
+              font-weight: 500
+            .job
+              height: auto
+              width: 100%
+              display: inline-block
+              padding: 5px 10px
+              border-radius: 2px
+              transition: 0.3s
+              text-decoration: none
+              font-size: 23px
+              font-weight: 500
+              margin-top: 10px
+            .talents
+              width: 70%
+              list-style: none
+              display: flex
+              justify-content: space-around
+              flex-wrap: wrap
+              margin: 80px auto 0 auto
+              .talent
+                padding: 5px 15px
+                font-size: 20px
+                border: solid 2px
+                border-radius: 5px
+                margin: 10px 5px
+            i
+              color: $gray
+              width: 150px !important
+              height: 150px
+              display: flex
+              justify-content: center
+              align-items: center
+              margin: 5px auto 20px auto
+              border-radius: 50%
+              border: solid $light-blue 4px
+              overflow: hidden
+              transition: all 0.7s ease
+              font-size: 100px
+              color: $dark-black-blue
+              background: $light-blue
+          &:hover
+            .zoom
+              transform: scale(1.05)
+              img
+                padding: 5px
+.owl-carousel
+  .owl-item
+    img
+      width: 150px
       height: 150px
-      display: flex
-      justify-content: center
-      align-items: center
+      object-fit: cover
       margin: 5px auto 20px auto
       border-radius: 50%
-      border: solid $light-blue 4px
+      background: $dark-black-blue-almostsame
       overflow: hidden
-      transition: all 0.7s ease
-      font-size: 100px
-      color: $dark-black-blue
-      background: $light-blue
-  &:hover
-    color: $dark-black-blue
-    .zoom
-      transform: scale(1.05)
-    img , i
-      border-color: $dark-black-blue
-      box-shadow: 0 0 0 38em $light-blue
-    p
-      color: $dark-black-blue
-    .name
-      font-size: 18px
-      font-weight: 700
+      padding: 10px
+      transition: all 0.3s ease
 
-
-
-
-.name
-  color: $light-blue
-  margin: 2px 6px
-  padding: 5px 10px
-  border-radius: 2px
-  transition: 0.3s
-  vertical-align: middle
-  text-decoration: none
-  box-sizing: border-box
-  display: inline-block
-
-img
-  color: $gray
-  width: 150px !important
-  height: 150px
-  object-fit: cover
-  margin: 5px auto 20px auto
-  border-radius: 50%
-  border: solid $light-blue 4px
-  overflow: hidden
-  transition: all 0.7s ease
-
-.job
-  height: auto
-  width: 100%
-  color: $gray
-  // margin: 2px 6px
-  padding: 5px 10px
-  border-radius: 2px
-  transition: 0.3s
-  vertical-align: middle
-  text-decoration: none
-  box-sizing: border-box
-  display: inline-block
-
-
-.notice-exp
-  width: 100%
-  position: relative
-  color: $light-blue
-  text-align: center
-  font-size: 3rem
-  display: inline-block
-  user-select: none
-  margin-bottom: 60px
-  &::before
-    content: ""
-    width: 280px
-    height: 5px
-    position: absolute
-    bottom: -25px
-    left: 50%
-    transform: translateX(-50%)
-    background-color: $dark-blue
-    border-radius: 20px
-  &::after
-    content: ""
-    width: 80px
-    height: 10px
-    position: absolute
-    bottom: -35px
-    left: 50%
-    padding: 5px 10px
-    background-color: $dark-black-blue-almostsame
-    transform: translateX(-50%)
-    font-size: 17px
-    color: $light-green
-    border-radius: 20px
-    border: solid 2px $dark-blue
-
+//owl custom
 .owl-dots
     text-align: center
     margin-top: 20px
@@ -1149,25 +1178,6 @@ img
 .owl-carousel
   z-index: auto
 
-.scroll
-  overflow: auto
-
-::-webkit-scrollbar
-    width: 10px
-
-::-webkit-scrollbar-track
-    background: $dark-black
-
-::-webkit-scrollbar-thumb
-    background: $light-blue
-    transition: 0.3s ease
-    border-radius: 10px
-
-
-::-webkit-scrollbar-thumb:hover
-    background: $scroll-bar-hover
-
-
 .category
   width: 100%
   .content
@@ -1180,6 +1190,7 @@ img
     display: inline-block
     margin: 5px 10px
     padding: 20px 5px
+
 
 
 // footer
@@ -1436,8 +1447,12 @@ img
           nav
             text-align: center
             .followus-exp
-              margin: 10px 15px 0 0
-
+              margin: 5px 5px 0 5px
+        .footer-contact
+          .contact-exp
+            span
+              i
+                padding: 0 0 0 5px
   // navbar
   .navbar-scroll
     .navbar
@@ -1475,11 +1490,17 @@ img
           text-align: center
           margin: 0 auto
           .followus-exp
-            margin: 10px 10px 0 10px
+            margin: 5px 5px 0 5px
       .footer-contact
-        max-width: 200px
+        max-width: 260px
         .contact-exp
           font-size: 15px
+          span
+            i
+              padding-right: 5px
+          #email-content , #address-content , #skype-content , #phone-content
+            text-align: justify
+          .content
       .footer-logo
         max-width: 300px
 
@@ -1491,7 +1512,11 @@ img
     .container
       max-width: 600px
 
-
+  //each sectoin
+  .notice-exp
+    font-size: 25px
+    &::before
+      width: 230px
 
   //rtl (persain mode)
   // navbar
@@ -1817,30 +1842,29 @@ img
 
 
   //ourteam
-  .our-teams , .our-services , .our-skills
-    .content
-      .notice-exp
-        font-size: 30px
-        margin-bottom: 50px
-        &::before
-          width: 150px
-          height: 3px
-        &::after
-          font-size: 15px
-      .team
-        .person-profile
-          height: 100%
-          display: flex
-          justify-content: center
-          align-items: center
-          min-height: 300px
-          padding: 5px
-          .zoom
+  .ourteam
+    .our-team
+      .content
+        .team
+          .person-profile
             height: 100%
-            img
-              width: 120px!important
-
-
+            display: flex
+            justify-content: center
+            align-items: center
+            min-height: 300px
+            padding: 5px
+            .zoom
+              height: 100%
+              img
+                width: 120px!important
+                height: 120px
+              .name
+                font-size: 22px
+              .job
+                font-size: 20px
+              .talents
+                .talent
+                  font-size: 17px
 
   //footer
   .footer
@@ -1984,17 +2008,17 @@ img
           width: 100%
           max-width: 300px
   //ourteam
-  .our-teams , .our-services
+  .our-team , .our-services
     .content
-      .notice-exp
-        font-size: 25px
-        margin-bottom: 40px
-        &::before
-          width: 130px
-          height: 3px
-        &::after
-          font-size: 12px
-          bottom: -37px
+      // .notice-exp
+      //   font-size: 25px
+      //   margin-bottom: 40px
+      //   &::before
+      //     width: 130px
+      //     height: 3px
+      //   &::after
+      //     font-size: 12px
+      //     bottom: -37px
       .team
         .person-profile
           height: 100%

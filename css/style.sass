@@ -927,8 +927,8 @@ body
                 width: max-content
                 display: flex
                 transition: 0.1s linear
-                #first-service-notice
-                  padding-left: 10px
+                h1
+                  padding: 0 10px
                   font-size: 22px
                 i
                   width: 50px
@@ -1020,8 +1020,6 @@ body
               transform: translate(-45% , -50%)
               color: $light-blue
               transition: all 0.1s
-
-
 
 // ourteams
 .ourteam
@@ -1424,6 +1422,12 @@ body
         margin: auto
         padding: 0 15px
 
+  //our services
+  .our-services
+    .content
+      .services
+        .services-exp
+          min-width: 500px
 
   //footer
   .footer
@@ -1471,6 +1475,13 @@ body
   .welcome
     .welcome-content
       padding: 0
+
+  //our services
+  .our-services
+    .content
+      .services
+        .services-exp
+          min-width: 500px
 
   //footer
   .footer
@@ -1812,7 +1823,6 @@ body
     .content
       .services
         .services-exp
-          display: inline-block
           width: auto
           margin: 10px 25px!important
           div
@@ -1823,7 +1833,6 @@ body
                     width: 48px
                     height: 48px
                     font-size: 18px
-                    margin: 25px
                 .service-exp
                   h1
                     font-size: 18px
@@ -1973,6 +1982,7 @@ body
     .content
       .services
         .services-exp
+          min-width: inherit
           display: inline-block
           width: auto
           margin: 8px 15px!important
